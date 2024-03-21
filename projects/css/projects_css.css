@@ -1,0 +1,28 @@
+
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #5F49F2 !important;
+}
+
+#home{
+  padding-bottom: 0px !important;
+}
+
+.images-grid{
+  display: block;
+  padding:15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 24px;
+}
+
+h1 {
+  font-size: 30px;
+  color: #000;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
