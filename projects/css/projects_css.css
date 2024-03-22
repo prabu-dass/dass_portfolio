@@ -37,3 +37,21 @@ body {
 .images-grid img{
   width: 100%;
 }
+
+
+
+@media (max-width: 750px) {
+
+.images-grid{
+  width:85%;
+  padding:10px;
+}
+
+}
+
+@media (max-width: 530px){
+  .images-grid{
+  width:90%;
+  padding:7px;
+}
+}

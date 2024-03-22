@@ -351,6 +351,21 @@ nav {
 }
 
 
+
+.portfolio-item:hover {
+  position: relative;
+  animation: position 0.4s;
+  animation-timing-function: ease;
+}
+
+@keyframes position {
+  from {bottom: 0px;}
+  to {bottom: 5px;}
+  0%   {bottom: 0px;}
+  50%  {bottom: 5px;}
+  100% {bottom: 0px;}
+}
+
 .full-screen-portfolio .portfolio-item h1 {
   position: relative;
   font-size: 17px;
