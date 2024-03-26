@@ -42,6 +42,12 @@ body {
 
 @media (max-width: 750px) {
 
+.images-grid h1{
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
 .images-grid{
   width:85%;
   padding:10px;
