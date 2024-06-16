@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\js",
-    "\\skills",
-    "\\skills\\images"
+    "\\skills"
   ],
-  "SelectedNode": "\\skills\\images\\sync_logo.png",
+  "SelectedNode": "\\index.html",
   "PreviewInSolutionExplorer": false
 }
