@@ -193,10 +193,7 @@
 }
 
 .column-lead {
-    background-image: url("../img/animation.png");
-    opacity: 1;
-    transition: transform 0.3s cubic-bezier(0.96, 0, 0.11, 1);
-    transition: opacity 0.3s cubic-bezier(0.96, 0, 0.11, 1);
+    background-image: url("../img/lead.png");
 }
 
     .column-lead:hover {
@@ -323,7 +320,7 @@
     }
 
     .column-lead {
-        background-image: url("../img/animation_vertical.png");
+        background-image: url("../img/lead_vertical.png");
     }
 }
 
