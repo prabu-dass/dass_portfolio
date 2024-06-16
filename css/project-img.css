@@ -1,0 +1,157 @@
+/*UI/UX_Image section*/
+
+.ui_ux_proj1 {
+    background-image: url("../skills/images/l2b2_ux.png");
+}
+
+.ui_ux_proj2 {
+    background-image: url("../skills/images/mothertong_ux.png");
+}
+
+.ui_ux_proj3 {
+    background-image: url("../skills/images/videopage_ux.png");
+}
+
+.ui_ux_proj4 {
+    background-image: url("../skills/images/pricing_ux.png");
+}
+
+.ui_ux_proj5 {
+    background-image: url("../skills/images/course_ux.png");
+}
+
+.ui_ux_proj6 {
+    background-image: url("../skills/images/dashboard_ux.png");
+}
+
+
+
+/*Graphic_Design_Image section*/
+
+.graphic_proj1 {
+    background-image: url("../skills/images/l2b2_logo.png");
+    background-color: #E5E7F5;
+}
+
+.graphic_proj2 {
+    background-image: url("../skills/images/thanini_logo.png");
+    background-color: #DEDEE0;
+}
+
+.graphic_proj3 {
+    background-image: url("../skills/images/visually_logo.png");
+}
+
+.graphic_proj4 {
+    background-image: url("../skills/images/colorfull_thumbs.png");
+    background-color: #D2C1FF;
+}
+
+.graphic_proj5 {
+    background-image: url("../skills/images/refer_earn.png");
+    background-color: #F2F7FE;
+}
+
+.graphic_proj6 {
+    background-image: url("../skills/images/coding_web_icons.png");
+    background-color: #E9EEF5;
+}
+
+.graphic_proj7 {
+    background-image: url("../skills/images/dashboard_icons.png");
+    background-color: #F2F7FF;
+}
+
+.graphic_proj8 {
+    background-image: url("../skills/images/yt1.png");
+}
+
+.graphic_proj9 {
+    background-image: url("../skills/images/yt2.png");
+    background-color: #C4D9FF;
+}
+
+.graphic_proj10 {
+    background-image: url("../skills/images/yt3.png");
+    background-color: #35421E;
+}
+
+.graphic_proj11 {
+    background-image: url("../skills/images/yt4.png");
+}
+
+.graphic_proj12 {
+    background-image: url("../skills/images/yt5.png");
+    background-color: #242424;
+}
+
+.graphic_proj13 {
+    background-image: url("../skills/images/yt6.png");
+    background-color: #C6D0E6;
+}
+
+.graphic_proj14 {
+    background-image: url("../skills/images/yt7.png");
+    background-color: #242424;
+}
+
+.graphic_proj15 {
+    background-image: url("../skills/images/yt8.png");
+    background-color: #F6F8FF;
+}
+
+.graphic_proj16 {
+    background-image: url("../skills/images/yt9.png");
+    background-color: #A6D2FE;
+}
+
+.graphic_proj17 {
+    background-image: url("../skills/images/yt10.png");
+}
+
+.graphic_proj18 {
+    background-image: url("../skills/images/dass_reel.png");
+    background-color: #CAC1F2;
+}
+
+.graphic_proj19 {
+    background-image: url("../skills/images/poster3d.png");
+    background-color: #D3E0EF;
+}
+
+.graphic_proj20 {
+    background-image: url("../skills/images/monkey_poster3d.png");
+    background-color: #0F2A75;
+}
+
+.graphic_proj21 {
+    background-image: url("../skills/images/dwm_logo.png");
+    background-color:#2d2d2d;
+}
+
+.graphic_proj22 {
+    background-image: url("../skills/images/sync_logo.png");
+}
+
+.graphic_proj23 {
+    background-image: url("../skills/images/abacus_logo.png");
+}
+
+.graphic_proj24 {
+    background-image: url("../skills/images/digital_drawings.png");
+    background-color: #D0D0D0;
+}
+
+/*Animation*/
+
+.animation_proj1 {
+    background: linear-gradient(to right, rgba(45, 45, 45, 0.5), rgba(0, 0, 0, 0)), url("../skills/images/gorilla_ad.png") no-repeat right/cover;
+}
+
+.animation_proj2 {
+    background: linear-gradient(to right, rgba(45, 45, 45, 0.5), rgba(0, 0, 0, 0)), url("../skills/images/slate3d.png") no-repeat right/cover;
+}
+
+.animation_proj3 {
+    background: linear-gradient(to right, rgba(45, 45, 45, 0.5), rgba(0, 0, 0, 0)), url("../skills/images/olaichuvadi3d.png") no-repeat right/cover;
+}
