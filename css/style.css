@@ -20,8 +20,6 @@
     justify-content: space-between;
 }
 
-
-
 .intro {
     width: 39%;
     position: relative; /* Ensure .about is positioned relative to .intro */
@@ -194,12 +192,43 @@
 
 .column-lead {
     background-image: url("../img/lead.png");
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
 }
 
-    .column-lead:hover {
-        opacity: opacity(0.5);
-        transform: scale(0.98) !important;
+
+
+.column-lead:hover {
+    animation: zoomShake 1s forwards;
+}
+
+@keyframes zoomShake {
+    0% {
+        transform: scale(1);
     }
+    20% {
+        transform: scale(1.1);
+    }
+    40% {
+        transform: scale(1.1) translateX(-10px);
+    }
+    50% {
+        transform: scale(1.1) translateX(10px);
+    }
+    60% {
+        transform: scale(1.1) translateX(-10px);
+    }
+    70% {
+        transform: scale(1.1) translateX(10px);
+    }
+    80% {
+        transform: scale(1.1) translateX(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 
 .column {
     position: relative;
