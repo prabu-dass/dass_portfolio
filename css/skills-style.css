@@ -135,8 +135,19 @@ body {
 
 /* Small devices (phones, 799px and down) */
 @media (max-width: 799px) {
-    .projects-container {
-        justify-content:center;
-        padding:0px;
+
+    .banner .heading {
+        padding: 10px 20px 10px 20px;
+        width: 80%;
     }
+
+    .projects-container {
+        justify-content: center;
+        padding: 0px;
+    }
+
+        .projects-container .project {
+            width: 60%;
+            padding: 10px 30px 10px 30px;
+        }
 }
