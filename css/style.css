@@ -360,6 +360,12 @@
         padding-top: 20%;
         padding-bottom: 20%;
     }
+
+
+        .skills-section h1 {
+            font-size: x-large;
+        }
+
     .skills-section .skills-inner .title{
         width:90%;
     }
