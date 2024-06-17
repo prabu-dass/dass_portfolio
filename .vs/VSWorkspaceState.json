@@ -2,7 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\css",
-    "\\skills"
+    "\\js",
+    "\\skills",
+    "\\skills\\animation"
   ],
+  "SelectedNode": "\\skills\\animation\\3d_scene.html",
   "PreviewInSolutionExplorer": false
 }
