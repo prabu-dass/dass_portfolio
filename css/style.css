@@ -51,19 +51,19 @@
         font-size: 80px;
     }
 
-    .intro .title .name .dass .D {
-        width: 58px;
-        height: 58px;
-        background-color: #843DF5;
-        top: 18px;
-        position: relative;
-        margin-left: 20px;
-        margin-right: 10px;
-        -webkit-animation: rotate 1.3s;
-        animation-timing-function: linear;
-        animation-fill-mode: forwards;
-        /*transform: translate(-133px, -26px) rotate(0deg) scale(0.4);*/
-    }
+        .intro .title .name .dass .D {
+            width: 58px;
+            height: 58px;
+            background-color: #843DF5;
+            top: 18px;
+            position: relative;
+            margin-left: 20px;
+            margin-right: 10px;
+            -webkit-animation: rotate 3.3s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            /*transform: translate(-133px, -26px) rotate(0deg) scale(0.4);*/
+        }
 
     .intro .title .dass {
         display: flex;
@@ -74,44 +74,63 @@
         font-size: 80px;
         color: #843DF5;
         margin-left: -8px;
-        -webkit-animation: blink 0.8s;
-        animation-delay: 1.2s;
-        animation-fill-mode: forwards;
+        -webkit-animation: blink 3.3s;
         animation-timing-function: linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+        animation-iteration-count: infinite;
         opacity: 0;
     }
 
+
     @keyframes rotate{
         0% {
-            transform: translate(-180px, -26px) rotate(0deg) scale(0.4);
+            transform: translate(-180px, -26px) rotate(0deg) scale(0.3);
             border-radius: 50% 50% 50% 50%;
         }
 
-        25% {
+        8% {
             transform: translate(-133px, -70px) rotate(90deg) scale(0.4);
             border-radius: 50% 50% 50% 50%;
         }
 
-        50% {
-            transform: translate(-90px, -25px) rotate(120deg) scale(0.4);
+        16% {
+            transform: translate(-90px, -22px) rotate(120deg) scale(0.4);
             border-radius: 50% 50% 50% 50%;
         }
 
-        75% {
-            transform: translate(-23px, -100px) rotate(300deg) scale(0.4);
+        26.8% {
+            transform: translate(-23px, -100px) rotate(300deg) scale(0.6);
             border-radius: 0 50% 50% 50%;
         }
 
+        36.8% {
+            transform: translate(0px, 25px) rotate(720deg) scale(1);
+            border-radius: 0 50% 50% 0;
+        }
+
+        38.8% {
+            transform: translate(0px, -5px) rotate(720deg) scale(1);
+            border-radius: 0 50% 50% 0;
+        }
+
+        40% {
+            transform: translate(0px, 3px) rotate(720deg) scale(1);
+            border-radius: 0 50% 50% 0;
+        }
         100% {
             transform: translate(0px, 3px) rotate(720deg) scale(1);
             border-radius: 0 50% 50% 0;
         }
-
     }
 
     @keyframes blink{
-        from{opacity:0}
-        to{opacity:100%}
+        0%{opacity:0}
+        35%{opacity:0}
+        60% {
+            opacity: 100%
+        }
+        100% {
+            opacity: 100%
+        }
     }
 
     .intro .about {
