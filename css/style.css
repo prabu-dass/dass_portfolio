@@ -12,6 +12,7 @@
     scroll-behavior: smooth;
 }
 
+
 /* Home Section */
 
 .home {
@@ -335,14 +336,8 @@
 }
 
 
-@media (max-width: 1530px){
-    .column {
-        width: 21%;
-    }
-}
-
 /* Medium devices (tablets, 600px to 1444px) */
-@media (max-width: 1400px) {
+@media (max-width: 1444px) {
     .home {
         flex-direction: column;
         padding-top: 10%;
