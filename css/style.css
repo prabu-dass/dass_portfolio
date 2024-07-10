@@ -39,15 +39,78 @@
         margin: 0;
     }
 
-    .intro h1 {
+    .intro .title .name{
+        display:flex;
+        flex-direction:row;
+    }
+
+    .intro .title .name .f-name {
+        font-weight: 200;
+        color: #fff;
+        font-size: 80px;
+    }
+
+    .intro .title .name .dass .D {
+        width: 58px;
+        height: 58px;
+        background-color: #843DF5;
+        top: 18px;
+        position: relative;
+        margin-left: 20px;
+        margin-right: 10px;
+        -webkit-animation: rotate 1.3s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        /*transform: translate(-133px, -26px) rotate(0deg) scale(0.4);*/
+    }
+
+    .intro .title .dass {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .intro .title .name .l-name {
         font-size: 80px;
         color: #843DF5;
         margin-left: -8px;
+        -webkit-animation: blink 0.8s;
+        animation-delay: 1.2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+        opacity: 0;
     }
 
-    .intro span {
-        font-weight: 200;
-        color: #fff;
+    @keyframes rotate{
+        0% {
+            transform: translate(-180px, -26px) rotate(0deg) scale(0.4);
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        25% {
+            transform: translate(-133px, -70px) rotate(90deg) scale(0.4);
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        50% {
+            transform: translate(-90px, -25px) rotate(120deg) scale(0.4);
+            border-radius: 50% 50% 50% 50%;
+        }
+
+        75% {
+            transform: translate(-23px, -100px) rotate(300deg) scale(0.4);
+            border-radius: 0 50% 50% 50%;
+        }
+
+        100% {
+            transform: translate(0px, 3px) rotate(720deg) scale(1);
+            border-radius: 0 50% 50% 0;
+        }
+
+    }
+
+    @keyframes blink{
+        from{opacity:0}
+        to{opacity:100%}
     }
 
     .intro .about {
@@ -364,6 +427,24 @@
         padding-bottom: 20%;
     }
 
+    .intro .title .name {
+        display: flex;
+        flex-direction: column;
+    }
+        .intro .title .name .f-name{
+            margin-left:-5px;
+        }
+
+        .intro .title .name .dass .D {
+            margin-left: 4px;
+            animation:none;
+            border-radius: 0 50% 50% 0;
+        }
+
+        .intro .title .name .l-name{
+            animation:none;
+            opacity:100%;
+        }
 
         .skills-section h1 {
             font-size: x-large;
