@@ -335,9 +335,14 @@
 }
 
 
+@media (max-width: 1530px){
+    .column {
+        width: 21%;
+    }
+}
 
 /* Medium devices (tablets, 600px to 1444px) */
-@media (max-width: 1444px) {
+@media (max-width: 1400px) {
     .home {
         flex-direction: column;
         padding-top: 10%;
@@ -384,21 +389,24 @@
     .skills-container {
         flex-direction: column;
     }
+
     .column {
         width: 100%;
         height: 300px;
         margin-bottom: 10px;
     }
-    .skills-section{
-        padding-top:10%;
-        padding-bottom:10%;
+
+    .skills-section {
+        padding-top: 10%;
+        padding-bottom: 10%;
     }
 
-    .skills-section .skills-inner .title {
-        width: 85%;
-    }
-    .skills-inner{
-        height:auto;
+        .skills-section .skills-inner .title {
+            width: 85%;
+        }
+
+    .skills-inner {
+        height: auto;
     }
 
     /*Background image*/
