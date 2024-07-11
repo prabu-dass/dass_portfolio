@@ -165,6 +165,7 @@
         height: auto;
         border: none;
         border-radius: 20px;
+        cursor:pointer;
     }
 
     .social-media {
