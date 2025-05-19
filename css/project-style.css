@@ -36,6 +36,16 @@ body {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 8px 24px;
 }
 
+.images-grid h1 {
+    background-color: #5F49F2;
+    padding: 10px;
+    color: #e9e5ff;
+}
+
+.images-grid .top{
+    margin-top: 0px;
+}
+
     .images-grid img {
         width: 100%;
     }
