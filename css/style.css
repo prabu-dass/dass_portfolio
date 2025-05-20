@@ -206,6 +206,10 @@
 
 .skills-section {
     background-color: #1a1a1a;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .skills-section h2{
@@ -214,7 +218,6 @@
 
 .skills-inner {
     width: 100%;
-    height: 100vh;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -228,19 +231,19 @@
     padding-bottom:40px;
 }
 
-.skills-section .skills-inner .title{
+.skills-section .skills-inner .title, .top-proj .top-proj-inner .title{
     width:80%;
 }
 
-.skills-section .skills-inner .title h1 {
+.skills-section .skills-inner .title h1, .top-proj .top-proj-inner .title h1 {
     font-size: 20px;
-    font-weight: 300;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    width: 150px;
+    color:#fff;
 }
 
-    .skills-section .skills-inner .title h1::before {
+    .skills-section .skills-inner .title h1::before,  .top-proj .top-proj-inner .title h1::before{
         content: "";
         display: block;
         width: 10px;
@@ -273,18 +276,30 @@
     background-image: url("../img/graphic_design.png");
 }
 
-.column-anima {
+.column-2danimation {
     background-image: url("../img/animation.png");
 }
 
-.column-lead {
-    background-image: url("../img/lead.png");
-    position: relative;
+.column-3danimation {
+    background-image: url("../img/animation.png");
+    /*position: relative;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.3s;*/
 }
 
+/*Top-Projects*/
+.top-proj{
+    height: 100vh;
+}
 
+.top-proj .top-proj-inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* SHAKE EFFECT
 
 .column-lead:hover {
     animation: zoomShake 1s forwards;
@@ -315,12 +330,12 @@
     100% {
         transform: scale(1);
     }
-}
+}*/
 
 .column {
     position: relative;
     width: 21.5%;
-    height: 100%;
+    height: 70vh;
     border-radius: 10px;
     padding: 20px;
     display: flex;
@@ -336,6 +351,7 @@
 
     .column .column-inside {        
         padding: 10px;
+        min-height: 10vh;
         background-color: rgba(132, 61, 245, 0.8);
         border-radius: 10px;
         color: #fff;
@@ -411,9 +427,10 @@
         margin-bottom: 10px;
     }
 
-    .skills-section {
+    .skills-section, .top-proj {
         padding-top: 10%;
         padding-bottom: 10%;
+        height: auto;
     }
 
         .skills-section .skills-inner .title {
@@ -433,12 +450,13 @@
         background-image: url("../img/graphic_design_vertical.png");
     }
 
-    .column-anima {
+    .column-2danimation {
         background-image: url("../img/animation_vertical.png");
     }
+    
 
-    .column-lead {
-        background-image: url("../img/lead_vertical.png");
+    .column-3danimation {
+        background-image: url("../img/animation_vertical.png");
     }
 }
 
