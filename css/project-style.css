@@ -40,10 +40,12 @@ body {
     background-color: #5F49F2;
     padding: 10px;
     color: #e9e5ff;
+    text-transform: uppercase;
 }
 
 .images-grid .top{
     margin-top: 0px;
+    text-transform: uppercase;
 }
 
     .images-grid img {
