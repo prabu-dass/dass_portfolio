@@ -276,15 +276,15 @@
     background-image: url("../img/graphic_design.png");
 }
 
-.column-anima {
+.column-2danimation {
     background-image: url("../img/animation.png");
 }
 
-.column-lead {
-    background-image: url("../img/lead.png");
-    position: relative;
+.column-3danimation {
+    background-image: url("../img/animation.png");
+    /*position: relative;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.3s;*/
 }
 
 /*Top-Projects*/
@@ -298,6 +298,8 @@
     justify-content: center;
     align-items: center;
 }
+
+/* SHAKE EFFECT
 
 .column-lead:hover {
     animation: zoomShake 1s forwards;
@@ -328,7 +330,7 @@
     100% {
         transform: scale(1);
     }
-}
+}*/
 
 .column {
     position: relative;
@@ -448,12 +450,13 @@
         background-image: url("../img/graphic_design_vertical.png");
     }
 
-    .column-anima {
+    .column-2danimation {
         background-image: url("../img/animation_vertical.png");
     }
+    
 
-    .column-lead {
-        background-image: url("../img/lead_vertical.png");
+    .column-3danimation {
+        background-image: url("../img/animation_vertical.png");
     }
 }
 
