@@ -277,11 +277,11 @@
 }
 
 .column-2danimation {
-    background-image: url("../img/animation.png");
+    background-image: url("../img/2danimation.png");
 }
 
 .column-3danimation {
-    background-image: url("../img/animation.png");
+    background-image: url("../img/3danimation.png");
     /*position: relative;
     overflow: hidden;
     transition: transform 0.3s;*/
@@ -451,12 +451,12 @@
     }
 
     .column-2danimation {
-        background-image: url("../img/animation_vertical.png");
+        background-image: url("../img/2danimation_vertical.png");
     }
     
 
     .column-3danimation {
-        background-image: url("../img/animation_vertical.png");
+        background-image: url("../img/3danimation_vertical.png");
     }
 }
 
