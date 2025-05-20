@@ -37,12 +37,14 @@ body {
 }
 
 .images-grid h1 {
+    text-transform: uppercase;
     background-color: #5F49F2;
     padding: 10px;
     color: #e9e5ff;
 }
 
 .images-grid .top{
+    text-transform: uppercase;
     margin-top: 0px;
 }
 
