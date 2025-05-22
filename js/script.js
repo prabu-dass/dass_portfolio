@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Inject cursor elements if not present
   if (!document.querySelector('.cursor-circle')) {
     const circleDiv = document.createElement('div');
     circleDiv.className = 'cursor-circle';
@@ -11,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.appendChild(circleDiv);
   }
 
-  // URL scroll to section
+  // ----- URL scroll to section -----
   const urlParams = new URLSearchParams(window.location.search);
   const section = urlParams.get('section');
   if (section) {
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Video player
+  // ----- Video player -----
   const video = document.getElementById('video_player');
   if (video) {
     video.controls = false;
@@ -35,31 +34,66 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mouse Circle with Dot
-  const circle = document.querySelector('.cursor-circle');
-  if (circle) {
-    let mouseX = 0, mouseY = 0;
-    let currentX = 0, currentY = 0;
+  // ----- Mouse Circle with Dot -----
 
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
+  const cursor = document.createElement('div');
+  cursor.className = 'cursor-main';
+  document.body.appendChild(cursor);
 
-    function animate() {
-      currentX += (mouseX - currentX) * 0.2;
-      currentY += (mouseY - currentY) * 0.2;
-
-      circle.style.left = `${currentX}px`;
-      circle.style.top = `${currentY}px`;
-
-      requestAnimationFrame(animate);
+  const style = document.createElement('style');
+  style.textContent = `
+    .cursor-main {
+      --size: 40px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      background-color: #886BF2;
+      box-shadow: 0 0 30px #af83ff;
+      mix-blend-mode: difference;
+      transform: translate(-50%, -50%);
+      transition: top 0.3s ease-out, left 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+      animation: breathe 2s ease-in-out infinite;
     }
 
-    animate();
-  }
+    @keyframes breathe {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.5);
+      }
+    }
+  `;
+  document.head.appendChild(style);
 
-  // Smart Back Button Behavior
+  // Animate cursor following the mouse
+  let mouseX = 0, mouseY = 0;
+  let currentX = 0, currentY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animateCursor() {
+    currentX += (mouseX - currentX) * 0.2;
+    currentY += (mouseY - currentY) * 0.2;
+
+    cursor.style.left = `${currentX}px`;
+    cursor.style.top = `${currentY}px`;
+
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+
+  // ----- Smart Back Button Behavior -----
+
   const backBtn = document.querySelector('.projects-wrap .backward');
 
   window.addEventListener('scroll', () => {

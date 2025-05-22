@@ -8,49 +8,45 @@
     scroll-behavior: smooth;
 }
 
-*, body, video{
-    cursor: none !important;
-}
-
 .html {
     scroll-behavior: smooth;
 }
 
-/*Mouse Circle*/
+/*Background-gradient*/
 
-.cursor-circle {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #823df5;
-  border-radius: 50%;
-  pointer-events: none;
-  mix-blend-mode: difference;
-  background-color: #823df5;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  animation: breathe 2s ease-in-out infinite;
+.home-section {
+  position: relative;
+  overflow: hidden;
 }
 
-.cursor-dot {
+.background-gradient {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background-color: #000000;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Stay behind home content */
+  pointer-events: none;
 }
 
-@keyframes breathe {
-  0%, 100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
+.circle {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(155, 89, 255, 0.3), transparent 70%);
+  animation: float 20s infinite ease-in-out;
+  mix-blend-mode: screen;
 }
+
+.circle1 { top: 10%; left: -15%; }
+.circle2 { top: 20%; right: -20%; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-30px) scale(1.1); }
+}
+
 
 /*Background Particles */
 #home-particles {
@@ -76,17 +72,17 @@
 
 .fixed-header {
   position: fixed;
-  top: 0;
+  top: -20px;
   left: 0;
   width: 100%;
-  height: 80px;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  height: 115px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
   color: #8d8d8d;
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 60px;
+  padding: 0 10%;
   box-sizing: border-box;
 }
 
@@ -119,7 +115,7 @@
 
 /* Home Section */
 
-.home {
+.home-section .home {
     width: 80%;
     display: flex;
     min-height: 100vh; 
@@ -480,7 +476,10 @@
 
 /* Medium devices (tablets, 600px to 1444px) */
 @media (max-width: 1444px) {
-    .home {
+    .fixed-header{
+        padding: 0 7%;
+    }
+    .home-section .home {
         flex-direction: column;
         padding-top: 10%;
         padding-bottom: 10%;
@@ -568,7 +567,15 @@
 
 /* Small devices (phones, 599px and down) */
 @media (max-width: 599px) {
-    .home {
+    .fixed-header{
+        padding: 0 5%;
+    }
+
+    .header-center{
+        display: none;
+    }
+
+    .home-section .home {
         width: 90%;
         padding-top: 20%;
         padding-bottom: 20%;
