@@ -20,28 +20,35 @@
 
 .cursor-circle {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #823df5;
   border-radius: 50%;
-  border: 1px solid #a065ff;
-  background-color: #843DF5;
-  opacity: 1;
   pointer-events: none;
   mix-blend-mode: difference;
-  transform: translate(-50%, -50%) scale(1);
+  background-color: #823df5;
   z-index: 9999;
-  animation: breath 2.5s ease-in-out infinite;
-  transition: background-color 0.2s ease;
+  transform: translate(-50%, -50%);
+  animation: breathe 2s ease-in-out infinite;
 }
 
-@keyframes breath {
+.cursor-dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #000000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes breathe {
   0%, 100% {
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
-    transform: translate(-50%, -50%) scale(1.5);
+    transform: translate(-50%, -50%) scale(1.1);
   }
 }
 
@@ -50,7 +57,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100% !important;
   height: 100%;
   z-index: 0;
   pointer-events: none;
@@ -65,21 +72,66 @@
   z-index: 1;
 }
 
+/*Header*/
+
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  color: #8d8d8d;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  box-sizing: border-box;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.fa {
+  font-size: 18px;
+}
+
+.D-inline {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 0 50% 50% 0;
+  background-color: #843DF5;
+}
+
+.l-name {
+        font-size: 18px;
+        color: #843DF5;
+        margin-left: -4px;
+}
+
 /* Home Section */
 
 .home {
     width: 80%;
     display: flex;
-    min-height: 100vh; /* Ensure home section takes full viewport height */
+    min-height: 100vh; 
     color: #ffffff;
     align-items: top;
-    margin: 0 auto; /* Center the home section horizontally */
+    margin: 0 auto;
     justify-content: space-between;
 }
 
 .intro {
     width: 39%;
-    position: relative; /* Ensure .about is positioned relative to .intro */
+    position: relative;
 }
     .intro .title {
         margin-top: 20px;
@@ -186,12 +238,12 @@
     }
 
     .intro .about {
-        background-color: #202020;
+        background: linear-gradient(to bottom, #1a1a1a, #000000);
         position: absolute;
-        top: 45%; /* Start from the middle */
+        top: 50%;
         left: 0;
         width: 100%;
-        height: 55%; /* Span to the bottom */
+        height: 50%; 
         border: none;
         border-radius: 20px 20px 0 0;
         display: flex;
@@ -257,7 +309,7 @@
 /* Skills Section */
 
 .skills-section {
-    background-color: #1a1a1a;
+    background: linear-gradient(to bottom, #000000, #1a1a1a);
     height: 100vh;
     display: flex;
     align-items: center;

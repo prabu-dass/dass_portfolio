@@ -47,11 +47,6 @@
     background-color: #D2C1FF;
 }
 
-.graphic_proj5 {
-    background-image: url("../skills/images/refer_earn.png");
-    background-color: #F2F7FE;
-}
-
 .graphic_proj6 {
     background-image: url("../skills/images/coding_web_icons.png");
     background-color: #E9EEF5;
@@ -109,11 +104,6 @@
     background-image: url("../skills/images/yt10.png");
 }
 
-.graphic_proj18 {
-    background-image: url("../skills/images/dass_reel.png");
-    background-color: #CAC1F2;
-}
-
 .graphic_proj19 {
     background-image: url("../skills/images/poster3d.png");
     background-color: #D3E0EF;
@@ -147,7 +137,19 @@
     background-color: #DEDEE0;
 }
 
-/*Animation*/
+/*2D Animation*/
+
+.graphic_proj5 {
+    background-image: url("../skills/images/refer_earn.png");
+    background-color: #F2F7FE;
+}
+
+.graphic_proj18 {
+    background-image: url("../skills/images/dass_reel.png");
+    background-color: #CAC1F2;
+}
+
+/*3D Animation*/
 
 .animation_proj1 {
     background: linear-gradient(to right, rgba(45, 45, 45, 0.5), rgba(0, 0, 0, 0)), url("../skills/images/gorilla_ad.png") no-repeat right/cover;
