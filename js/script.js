@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
       box-shadow: 0 0 30px #af83ff;
       mix-blend-mode: difference;
       transform: translate(-50%, -50%);
-      transition: top 0.3s ease-out, left 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out;
+      transition: top 0.1s ease-out, left 0.1s ease-out, width 0.1s ease-out, height 0.1s ease-out;
       animation: breathe 2s ease-in-out infinite;
     }
 
@@ -104,5 +104,38 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       backBtn.classList.remove('fixed');
     }
+  });
+
+  // ----- Experience section -----
+
+    const innerLine = document.querySelector('.inner-experience .inner');
+  const experienceSection = document.querySelector('.experience-section');
+  const experienceItems = document.querySelectorAll('.experience-item');
+
+  // Dynamically set height of experience section based on items
+  const itemHeight = experienceItems[0].offsetHeight;
+  const spacing = 100; // vertical spacing between items
+  const totalHeight = window.innerHeight / 2 + experienceItems.length * (itemHeight + spacing);
+  experienceSection.style.height = `${totalHeight}px`;
+
+  // Handle scroll effect
+  window.addEventListener('scroll', () => {
+    const sectionTop = experienceSection.offsetTop;
+    const sectionHeight = experienceSection.offsetHeight;
+    const scrollY = window.scrollY + window.innerHeight;
+    const progress = Math.min(Math.max((scrollY - sectionTop) / sectionHeight, 0), 1);
+
+    // Line grows/shrinks
+    innerLine.style.height = `${progress * 100}%`;
+
+    // Reveal items
+    experienceItems.forEach((item, index) => {
+      const triggerPoint = sectionTop + sectionHeight * ((index + 1) / (experienceItems.length + 1));
+      if (window.scrollY + window.innerHeight * 0.9 >= triggerPoint) {
+        item.classList.add('visible');
+      } else {
+        item.classList.remove('visible');
+      }
+    });
   });
 });

@@ -58,12 +58,12 @@
   z-index: 0;
   pointer-events: none;
 }
-.skills-section {
+.experience-section {
   position: relative;
   overflow: hidden;   
 }
 
-.skills-inner {
+.outer-experience {
   position: relative;
   z-index: 1;
 }
@@ -132,7 +132,7 @@
     .intro .title {
         margin-top: 20px;
         position: absolute;
-        top: 32%;
+        bottom: 50%;
         z-index:1;
     }
 
@@ -301,6 +301,147 @@
     align-items: center;
 }
 
+
+/*Experience Section*/
+
+.experience-section {
+  position: relative;
+  height: calc(70vh + 3 * 200px); /* Adjust 3 items * item height */
+}
+
+.exp-title h1{
+    text-align: center;
+    margin-bottom: 85px;
+    font-weight: 300 !important;
+    background: linear-gradient(to bottom, #9255f5, #843DF5, #0d0022);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    color: transparent;
+    font-size: 80px;
+}
+
+.inner-experience {
+  position: sticky;
+  top: 0;
+  height: 70vh;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.outer {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: #000814;
+  z-index: 1;
+  overflow: visible;
+}
+
+.inner {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom,  rgba(106, 169, 255, 0.3), #843DF5);
+  box-shadow: 0 0 30px 10px rgba(75, 69, 247, 0.4);
+  transition: height 0.2s ease-out;
+}
+
+.experience-items {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.experience-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color:#dddddd;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.experience-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-item p{
+    margin: 0;
+}
+
+.exp-years, .exp-achievements {
+  width: 40%;
+}
+
+.exp-years{
+    text-align: right;
+}
+
+.exp-years h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #dddddd;
+}
+
+.exp-years a {
+  text-decoration: none;
+  color: #886BF2;
+}
+
+.exp-decription{
+    font-size: 13px;
+    padding-left: 20px;
+}
+
+.exp-decription p, .exp-achievements h4{
+    margin: 10px 0 10px 0;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background: #843DF5;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #4285f4;
+}
+
+.coin, .award{
+  display: flex;
+  align-items: flex-start; 
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.coin img, .award img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.coin p, .award p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.highlight{
+   font-size: 16px;
+   font-weight: 600;
+}
 
 /* Skills Section */
 
@@ -516,7 +657,10 @@
         .intro .about .about-inside {
             line-height: 30px;
         }
-
+    
+    .inner-experience{
+        width: 85%;
+    }
     .social-media fa {
         font-size: 40px;
         padding: 40px;
@@ -578,7 +722,6 @@
     .home-section .home {
         width: 90%;
         padding-top: 20%;
-        padding-bottom: 20%;
     }
 
     .intro .title .name {
@@ -603,6 +746,109 @@
         .skills-section h1 {
             font-size: x-large;
         }
+
+    /*Experience section*/
+
+    .exp-title h1{
+        font-size: 70px;
+        padding-left: 5%;
+        text-align: left;
+        line-height: 70px;
+    }
+
+    .inner-experience {
+    align-items: flex-start;
+    width: 90%;
+  }
+
+  .outer {
+    left: 5px;
+    transform: none;
+    width: 2px;
+    height: 100%;
+    background: #222;
+  }
+
+  .inner {
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(to bottom, rgba(106, 169, 255, 0.3), #843DF5);
+    box-shadow: 0 0 10px rgba(75, 69, 247, 0.4);
+  }
+
+  .experience-item {
+    display: block;
+    position: relative;
+    padding-left: 36px; /* space for dot + gap */
+    margin-bottom: 2rem;
+  }
+
+  .experience-item .dot {
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+  }
+
+  .dot {
+    position: absolute;
+    left: 12px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #843DF5;
+    box-shadow: 0 0 6px #843DF5;
+    z-index: 2;
+  }
+
+  .exp-years, .exp-achievements {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.5rem;
+    margin-bottom: 0;
+}
+
+  .exp-years h1 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+  }
+
+  .exp-years a {
+    font-size: 0.85rem;
+  }
+
+  .exp-achievements {
+    margin-top: 4px;
+  }
+
+  .exp-achievements h4 {
+    font-size: 0.95rem;
+    margin: 8px 0 6px;
+  }
+
+  .exp-decription p,
+  .coin p,
+  .award p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .coin img,
+  .award img {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+  }
+
+  .highlight {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .experience-section {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
     .skills-section .skills-inner .title{
         width:90%;
