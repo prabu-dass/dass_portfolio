@@ -12,6 +12,10 @@
     scroll-behavior: smooth;
 }
 
+p{
+    color: #dddddd;
+}
+
 /*Background-gradient*/
 
 .home-section {
@@ -248,8 +252,12 @@
 
         .intro .about .about-inside {
             padding: 25px;
-            line-height: 25px;
+            line-height: 22px;
             color: #dddddd;
+        }
+        
+        .intro .about .about-inside p{
+            font-size: 14px;
         }
 
 .showreel {
@@ -302,11 +310,11 @@
 }
 
 
-/*Experience Section*/
+/*Experience Section - 1
 
 .experience-section {
   position: relative;
-  height: calc(70vh + 3 * 200px); /* Adjust 3 items * item height */
+  height: calc(80vh + 3 * 200px); /* Adjust 3 items * item height
 }
 
 .exp-title h1{
@@ -324,7 +332,7 @@
 .inner-experience {
   position: sticky;
   top: 0;
-  height: 70vh;
+  height: 80vh;
   width: 80%;
   margin: auto;
   display: flex;
@@ -347,7 +355,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: 0%;
+  height: 10%;
   background: linear-gradient(to bottom,  rgba(106, 169, 255, 0.3), #843DF5);
   box-shadow: 0 0 30px 10px rgba(75, 69, 247, 0.4);
   transition: height 0.2s ease-out;
@@ -386,6 +394,10 @@
   width: 40%;
 }
 
+.exp-achievements .bold{
+    font-weight: 600;
+}
+
 .exp-years{
     text-align: right;
 }
@@ -416,6 +428,128 @@
   background: #843DF5;
   border-radius: 50%;
   box-shadow: 0 0 10px #4285f4;
+}
+
+.awards{
+  border-top: 0.5px solid #424242;
+  padding: 5px 0 5px 0;
+  margin-top: 15px;
+}
+
+.coin, .award{
+  display: flex;
+  align-items: flex-start; 
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.coin img, .award img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.coin p, .award p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 13px;
+}
+
+.highlight{
+   font-size: 16px;
+   font-weight: 600;
+}
+
+
+/*Experience Section - 2 */
+
+.bold{
+    font-weight: 600;
+}
+
+.experience-section {
+  position: relative;
+  height: 100vh;
+}
+
+.exp-title h1{
+    text-align: center;
+    font-weight: 300 !important;
+    background: linear-gradient(to bottom, #9255f5, #843DF5, #0d0022);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    color: transparent;
+    font-size: 80px;
+}
+
+.inner-experience{
+    width: 80%;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.experience-items{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+
+.experience-item{
+    border: 0.5px solid #424242;
+    color: #dddddd;
+    padding: 50px;
+    width: 33.3%;
+    height: 70vh;
+}
+.experience-item h1{
+    font-size: 60px;
+    margin: 0;
+    color: #dddddd;
+}
+
+.experience-item h2, .experience-item h4{
+    margin:0;
+  }
+
+.experience-item p a{
+    color: #9255f5;
+    text-decoration: none;
+}
+
+.exp-decription{
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+.awards{
+  padding: 5px 0 5px 0;
+  margin-top: 15px;
+}
+
+.award-line{
+display: flex;
+  align-items: center;
+  text-align: center;
+  color: #aaa;
+  font-weight: 500;
+  margin: 30px 0;
+}
+
+.award-line::before,
+.award-line::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid #424242;
+}
+
+.award-line::before{
+      margin: 0 12px 0 0;
+}
+
+.award-line::after{
+      margin: 0 0 0 12px;
 }
 
 .coin, .award{
@@ -655,7 +789,7 @@
 
 
         .intro .about .about-inside {
-            line-height: 30px;
+            line-height: 20px;
         }
     
     .inner-experience{
@@ -677,7 +811,6 @@
     }
 
     .skills-section, .top-proj {
-        padding-top: 10%;
         padding-bottom: 10%;
         height: auto;
     }
@@ -854,7 +987,6 @@
         width:90%;
     }
     .skills-section {
-        padding-top: 20%;
         padding-bottom: 20%;
     }
 }

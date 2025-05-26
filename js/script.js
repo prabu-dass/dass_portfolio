@@ -107,35 +107,35 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ----- Experience section -----
-
+/*
     const innerLine = document.querySelector('.inner-experience .inner');
-  const experienceSection = document.querySelector('.experience-section');
-  const experienceItems = document.querySelectorAll('.experience-item');
+    const experienceSection = document.querySelector('.experience-section');
+    const experienceItems = document.querySelectorAll('.experience-item');
 
-  // Dynamically set height of experience section based on items
-  const itemHeight = experienceItems[0].offsetHeight;
-  const spacing = 100; // vertical spacing between items
-  const totalHeight = window.innerHeight / 2 + experienceItems.length * (itemHeight + spacing);
-  experienceSection.style.height = `${totalHeight}px`;
+    // Dynamically set height of experience section based on items
+    const itemHeight = experienceItems[0].offsetHeight;
+    const spacing = 50; // vertical spacing between items
+    const totalHeight = window.innerHeight / 2 + experienceItems.length * (itemHeight + spacing);
+    experienceSection.style.height = `${totalHeight}px`;
 
-  // Handle scroll effect
-  window.addEventListener('scroll', () => {
-    const sectionTop = experienceSection.offsetTop;
-    const sectionHeight = experienceSection.offsetHeight;
-    const scrollY = window.scrollY + window.innerHeight;
-    const progress = Math.min(Math.max((scrollY - sectionTop) / sectionHeight, 0), 1);
+    // Handle scroll effect
+    window.addEventListener('scroll', () => {
+      const sectionTop = experienceSection.offsetTop;
+      const sectionHeight = experienceSection.offsetHeight;
+      const scrollY = window.scrollY + window.innerHeight;
+      const progress = Math.min(Math.max((scrollY - sectionTop) / sectionHeight, 0), 1);
 
-    // Line grows/shrinks
-    innerLine.style.height = `${progress * 100}%`;
+      // Line grows/shrinks
+      innerLine.style.height = `${progress * 100}%`;
 
-    // Reveal items
-    experienceItems.forEach((item, index) => {
-      const triggerPoint = sectionTop + sectionHeight * ((index + 1) / (experienceItems.length + 1));
-      if (window.scrollY + window.innerHeight * 0.9 >= triggerPoint) {
-        item.classList.add('visible');
-      } else {
-        item.classList.remove('visible');
-      }
+      // Reveal items
+      experienceItems.forEach((item, index) => {
+        const triggerPoint = sectionTop + sectionHeight * ((index + 1) / (experienceItems.length + 1));
+        if (window.scrollY + window.innerHeight * 0.9 >= triggerPoint) {
+          item.classList.add('visible');
+        } else {
+          item.classList.remove('visible');
+        }
     });
-  });
+  });*/
 });

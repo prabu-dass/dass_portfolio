@@ -35,7 +35,8 @@ const material = new THREE.PointsMaterial({
   map: texture,
   transparent: true,
   opacity: 0.4,
-  depthWrite: false
+  depthWrite: false,
+  color: new THREE.Color('#886BF2')
 });
 
 const points = new THREE.Points(geometry, material);
