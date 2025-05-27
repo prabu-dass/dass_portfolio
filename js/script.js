@@ -138,4 +138,61 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
   });*/
+
+// Animate .exp-title from right — once
+const title = document.querySelector('.exp-title');
+
+const titleObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      title.classList.add('in-view');
+      titleObserver.unobserve(entry.target); // stop observing after animation
+    }
+  });
+}, {
+  threshold: 0.6
+});
+
+titleObserver.observe(title);
+
+
+// Animate .experience-item from bottom with stagger — once
+const items = document.querySelectorAll('.experience-item');
+
+const itemsObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const index = entry.target.dataset.index || 0;
+      setTimeout(() => {
+        entry.target.classList.add('in-view');
+      }, index * 200);
+      itemsObserver.unobserve(entry.target); // stop observing
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+items.forEach(item => itemsObserver.observe(item));
+
+
+// Animate .intro section children from bottom — once
+const introElements = document.querySelectorAll('.intro, .intro .title, .intro .about');
+
+const introObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const index = entry.target.dataset.index || 0;
+      setTimeout(() => {
+        entry.target.classList.add('in-view');
+      }, index * 200);
+      introObserver.unobserve(entry.target); // stop observing
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+introElements.forEach(el => introObserver.observe(el));
+
 });

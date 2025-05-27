@@ -13,8 +13,14 @@
 }
 
 p{
-    font-size: 14px;
+    font-size: 13px;
     color: #8d8d8d;
+}
+
+h4{
+    color: #dddddd;
+    font-weight: 600;
+    font-size: 13px;
 }
 
 /*Background-gradient*/
@@ -120,6 +126,10 @@ p{
 
 /* Home Section */
 
+.intro p{
+            padding-bottom: 10px;
+        }
+
 .home-section .home {
     width: 80%;
     display: flex;
@@ -139,6 +149,12 @@ p{
         position: absolute;
         bottom: 60%;
         z-index:1;
+    }
+
+    .intro .title p{
+        padding: 0;
+        font-size: 15px;
+        color: #dddddd;
     }
 
     .intro h1, .intro p {
@@ -253,7 +269,6 @@ p{
 
         .intro .about .about-inside {
             padding: 25px;
-            line-height: 22px;
             color: #dddddd;
         }
         
@@ -296,12 +311,11 @@ p{
         border-radius: 20px;
         cursor:pointer;
     }
+        .social-media{
+            padding: 20px 0;
+        }
 
-    .social-media {
-        padding: 8px 0;
-    }
-
-        .social-media .fa {
+        .social-inner .fa {
             border: solid 1px;
             border-color: #8d8d8d;
             width: 15px;
@@ -313,14 +327,18 @@ p{
         }
 
 
-    .social-media .fa:hover {
+    .social-inner .fa:hover {
         color: #000;
         background-color: #8d8d8d;
     }
 
+.social-inner, .contact{
+    padding-top: 10px;
+}
+
 .contact .fa {
     border-color: #8d8d8d;
-    font-size: 20px;
+    font-size: 15px;
     padding: 10px;
     color: #8d8d8d;
 }
@@ -331,6 +349,9 @@ p{
     align-items: center;
 }
 
+.contact p{
+    padding: 0;
+}
 
 /*Experience Section - 1
 
@@ -486,6 +507,43 @@ p{
 
 /*Experience Section - 2 */
 
+.intro,
+.intro .title,
+.intro .about {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.8s ease;
+}
+
+.intro.in-view,
+.intro .title.in-view,
+.intro .about.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.exp-title {
+  transform: translateX(200px);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.exp-title.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.experience-item {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.experience-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .bold{
     font-weight: 600;
 }
@@ -505,6 +563,7 @@ p{
     color: transparent;
     font-size: 80px;
     margin-bottom: -20px; 
+    text-transform: uppercase;
 }
 
 .inner-experience{
@@ -578,13 +637,23 @@ p{
 }
 
 .exp-decription{
+    padding: 50px 0;
+}
+
+.exp-years h4{
+    padding: 10px 0;
+}
+
+.experience-item h4 a{
+    text-decoration: none;
+    color: #9255f5;
     font-size: 14px;
 }
 
 .exp-decription p{
     position: relative;
     padding-left: 18px;
-    margin: 10px 0;
+    padding-bottom: 10px;
     color: #8d8d8d;
 }
 
@@ -598,7 +667,7 @@ p{
 }
 
 .awards{
-  margin-top: 15px;
+      padding: 50px 0;
 }
 
 .award-line{
@@ -607,7 +676,6 @@ display: flex;
   text-align: center;
   color: #dddddd;
   font-weight: 500;
-  margin: 30px 0;
 }
 
 .award-line::before,
@@ -629,7 +697,7 @@ display: flex;
   display: flex;
   align-items: flex-start; 
   gap: 8px;
-  margin-top: 8px;
+  padding-bottom: 20px;
 }
 
 .coin img, .award img {
@@ -641,8 +709,6 @@ display: flex;
 
 .coin p, .award p {
   margin: 0;
-  line-height: 1.5;
-  font-size: 13px;
 }
 
 .highlight{
@@ -861,11 +927,7 @@ display: flex;
             font-size: 80px;
         }
 
-        .intro .about .about-inside {
-            line-height: 20px;
-        }
-
-        .social-media fa {
+        .social-inner fa {
         font-size: 40px;
         padding: 40px;
     }
