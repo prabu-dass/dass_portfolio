@@ -13,7 +13,8 @@
 }
 
 p{
-    color: #dddddd;
+    font-size: 14px;
+    color: #8d8d8d;
 }
 
 /*Background-gradient*/
@@ -136,7 +137,7 @@ p{
     .intro .title {
         margin-top: 20px;
         position: absolute;
-        bottom: 50%;
+        bottom: 60%;
         z-index:1;
     }
 
@@ -240,7 +241,7 @@ p{
     .intro .about {
         background: linear-gradient(to bottom, #1a1a1a, #000000);
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 0;
         width: 100%;
         height: 50%; 
@@ -260,12 +261,32 @@ p{
             font-size: 14px;
         }
 
+        .about-inside h4{
+            color: #dddddd;
+            margin: 10px 0;
+            font-weight: 600;
+            font-size: 13px;
+        }
+
 .showreel {
     width: 59%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     color: #dddddd;
+    position: relative;
+    animation-name: showreel;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(.32,.06,.17,1.01);
+}
+
+@keyframes showreel{
+    0%{
+        right:-75%;
+    }
+    100%{
+        right: 0%;
+    }
 }
 
     .showreel video {
@@ -277,19 +298,20 @@ p{
     }
 
     .social-media {
-        padding: 20px 0;
+        padding: 8px 0;
     }
 
         .social-media .fa {
             border: solid 1px;
             border-color: #8d8d8d;
-            font-size: 20px;
-            font-weight: 100;
+            width: 15px;
+            height: 15px;
             text-decoration: none;
-            border-radius: 10px;
+            border-radius: 7px;
             padding: 18px;
-            color: #dddddd;
+            color: #8d8d8d;
         }
+
 
     .social-media .fa:hover {
         color: #000;
@@ -470,48 +492,85 @@ p{
 
 .experience-section {
   position: relative;
-  height: 100vh;
+  height: auto;
 }
 
 .exp-title h1{
     text-align: center;
     font-weight: 300 !important;
-    background: linear-gradient(to bottom, #9255f5, #843DF5, #0d0022);
+    background: linear-gradient(to bottom, #9255f5, #843DF5, #000);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text; 
     color: transparent;
     font-size: 80px;
+    margin-bottom: -20px; 
 }
 
 .inner-experience{
-    width: 80%;
     align-items: center;
     margin: 0 auto;
+    border-width: 0.5px 0 0.5px 0;
+    border-style: solid;
+    border-color: #424242;
 }
 
 .experience-items{
     display: flex;
     flex-direction: row;
-    padding: 20px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .experience-item{
-    border: 0.5px solid #424242;
     color: #dddddd;
-    padding: 50px;
     width: 33.3%;
-    height: 70vh;
+    height: auto;
+    border-style: solid;
+    border-color: #424242;
 }
+
+.experience-item1{
+    padding: 50px 50px 50px 0;
+}
+
+.experience-item2{
+    padding: 50px;
+}
+
+.experience-item3{
+    padding: 50px 0 50px 50px;
+}
+
+.experience-item1, .experience-item2{
+    border-width: 0 0.5px 0 0;
+}
+
+.experience-item3{
+    border-width: 0;
+}
+
 .experience-item h1{
     font-size: 60px;
     margin: 0;
     color: #dddddd;
+    font-weight: 300;
 }
 
 .experience-item h2, .experience-item h4{
     margin:0;
+    font-weight: 600;
   }
+
+.experience-item h4{
+    font-size: 13px;
+}
+
+.experience-item h2{
+    font-weight: 300;
+    color: #dddddd;
+    font-size: 20px;
+}
 
 .experience-item p a{
     color: #9255f5;
@@ -520,11 +579,25 @@ p{
 
 .exp-decription{
     font-size: 14px;
-    padding-left: 20px;
+}
+
+.exp-decription p{
+    position: relative;
+    padding-left: 18px;
+    margin: 10px 0;
+    color: #8d8d8d;
+}
+
+.exp-decription p::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #dddddd;
+  font-weight: bold;
 }
 
 .awards{
-  padding: 5px 0 5px 0;
   margin-top: 15px;
 }
 
@@ -532,7 +605,7 @@ p{
 display: flex;
   align-items: center;
   text-align: center;
-  color: #aaa;
+  color: #dddddd;
   font-weight: 500;
   margin: 30px 0;
 }
@@ -573,8 +646,9 @@ display: flex;
 }
 
 .highlight{
-   font-size: 16px;
+   font-size: 14px;
    font-weight: 600;
+   color: #9255f5;
 }
 
 /* Skills Section */
@@ -787,15 +861,11 @@ display: flex;
             font-size: 80px;
         }
 
-
         .intro .about .about-inside {
             line-height: 20px;
         }
-    
-    .inner-experience{
-        width: 85%;
-    }
-    .social-media fa {
+
+        .social-media fa {
         font-size: 40px;
         padding: 40px;
     }
@@ -810,14 +880,40 @@ display: flex;
         margin-bottom: 10px;
     }
 
+    .inner-experience{
+        border: none;
+    }
+
+    .experience-section{
+        padding-bottom: 10%;
+    }
+
+    .exp-title h1{
+        margin-bottom: 10px;
+    }
+
+    .experience-item{
+        width: 100%;
+        border-width: 0 0 0.5px 0;
+    }
+
+    .experience-items{
+        flex-direction: column;
+        width:85%;
+    }
+
+    .experience-item1, .experience-item2, .experience-item3{
+        padding: 50px 0;
+    }
+
     .skills-section, .top-proj {
         padding-bottom: 10%;
         height: auto;
     }
 
-        .skills-section .skills-inner .title {
-            width: 85%;
-        }
+    .skills-section .skills-inner .title {
+        width: 85%;
+    }
 
     .skills-inner {
         height: auto;
@@ -879,109 +975,6 @@ display: flex;
         .skills-section h1 {
             font-size: x-large;
         }
-
-    /*Experience section*/
-
-    .exp-title h1{
-        font-size: 70px;
-        padding-left: 5%;
-        text-align: left;
-        line-height: 70px;
-    }
-
-    .inner-experience {
-    align-items: flex-start;
-    width: 90%;
-  }
-
-  .outer {
-    left: 5px;
-    transform: none;
-    width: 2px;
-    height: 100%;
-    background: #222;
-  }
-
-  .inner {
-    width: 100%;
-    height: 0%;
-    background: linear-gradient(to bottom, rgba(106, 169, 255, 0.3), #843DF5);
-    box-shadow: 0 0 10px rgba(75, 69, 247, 0.4);
-  }
-
-  .experience-item {
-    display: block;
-    position: relative;
-    padding-left: 36px; /* space for dot + gap */
-    margin-bottom: 2rem;
-  }
-
-  .experience-item .dot {
-    position: absolute;
-    left: 0;
-    top: 0.5rem;
-  }
-
-  .dot {
-    position: absolute;
-    left: 12px;
-    top: 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #843DF5;
-    box-shadow: 0 0 6px #843DF5;
-    z-index: 2;
-  }
-
-  .exp-years, .exp-achievements {
-    width: 100%;
-    text-align: left;
-    margin-bottom: 0.5rem;
-    margin-bottom: 0;
-}
-
-  .exp-years h1 {
-    font-size: 1.5rem;
-    margin-bottom: 4px;
-  }
-
-  .exp-years a {
-    font-size: 0.85rem;
-  }
-
-  .exp-achievements {
-    margin-top: 4px;
-  }
-
-  .exp-achievements h4 {
-    font-size: 0.95rem;
-    margin: 8px 0 6px;
-  }
-
-  .exp-decription p,
-  .coin p,
-  .award p {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-
-  .coin img,
-  .award img {
-    width: 20px;
-    height: 20px;
-    margin-top: 2px;
-  }
-
-  .highlight {
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-
-  .experience-section {
-    padding-left: 0;
-    padding-right: 0;
-  }
 
     .skills-section .skills-inner .title{
         width:90%;
