@@ -8,6 +8,11 @@ body {
     scroll-behavior: smooth;
 }
 
+p{
+    font-size: 16px;
+    color: #ffffff;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -147,7 +152,7 @@ html {
     }
 
 /* Medium devices (tablets, 600px to 1444px) */
-@media (max-width: 1444px) {
+@media (max-width: 1280px) {
 
     .projects-wrap{
         width:90%;
@@ -159,7 +164,7 @@ html {
 }
 
 /* Small devices (phones, 799px and down) */
-@media (max-width: 799px) {
+@media (max-width: 599px) {
 
     .projects-wrap .backward.fixed{
         width: 35%;

@@ -420,7 +420,7 @@ h4{
     margin: 0 auto;
     border-width: 0.5px 0 0.5px 0;
     border-style: solid;
-    background-color: #1a1a1a;
+    background: linear-gradient(to bottom, rgba(33, 33, 33, 0.6) 0%, rgba(33, 33, 33, 0) 100%);
 }
 
 .experience-items{
@@ -574,9 +574,48 @@ display: flex;
 
 /* Skills Section */
 
+
+.arrow {
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    cursor: pointer;
+}
+
+.arrow span {
+    display: block;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-bottom: 5px solid #8d8d8d;
+    border-right: 5px solid #8d8d8d;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
 .skills-section{
-    height: 100vh;
-    padding-top: 10%;
+    height: 70vh;
     position: relative;
     overflow: hidden;
 }
@@ -587,7 +626,6 @@ display: flex;
     border-width: 0.5px 0 0.5px 0;
     border-style: solid;
     border-color: #2d2d2d;
-    height: 100%;
     width: 132vw; /* 4 sections * 100vw */
     display: flex;
     flex-direction: row;
@@ -608,23 +646,22 @@ display: flex;
     border-color: #2d2d2d;
     border-width: 0 0.5px 0 0;
     height: 70vh;
-    display: flex;
-    flex: 0 0 33vw;
-    height: 100vh;
+    flex: 0 0 33vw;;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 50px 0;
 }
 
 
 .skills-item a img{
-    height: 300px;
-    width: 300px;
+    height: auto;
+    width: 400px;
 }
 
 .column-inside{
-    width: 300px;
+    width: 400px;
     padding-top: 20px;
 }
 
@@ -705,8 +742,8 @@ display: flex;
     height: 40vh;
 }
 
-/* Medium devices (tablets, 600px to 1444px) */
-@media (max-width: 1444px) {
+/* Medium devices (tablets, 600px to 1280px) */
+@media (max-width: 1280px) {
     .fixed-header{
         padding: 0 7%;
     }

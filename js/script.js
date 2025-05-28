@@ -68,6 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
         transform: translate(-50%, -50%) scale(1.5);
       }
     }
+
+    @media (max-width: 1280px){
+      .cursor-main{display:none;}
+    }
   `;
   document.head.appendChild(style);
 
@@ -196,22 +200,25 @@ const introObserver = new IntersectionObserver(entries => {
 introElements.forEach(el => introObserver.observe(el));
 
 // Horizontal Scroll for Skills Section
-  gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
-  const skillsContainer = document.querySelector(".skills-container");
-  const totalScroll = skillsContainer.scrollWidth - window.innerWidth;
+const skillsContainer = document.querySelector(".skills-container");
 
-  gsap.to(skillsContainer, {
-    x: () => `-${totalScroll}px`,
-    ease: "none",
-    scrollTrigger: {
-      trigger: ".skills-section",
-      start: "top top",
-      end: () => `+=${totalScroll}`,
-      scrub: 1,
-      pin: true,
-      anticipatePin: 1,
-    }
-  });
+// Calculate total scroll distance for horizontal scroll
+const totalScroll = skillsContainer.scrollWidth - window.innerWidth;
+
+// Apply horizontal scroll animation with pin
+gsap.to(skillsContainer, {
+  x: () => `-${totalScroll}px`,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".skills-section",
+    start: "top 15%", 
+    end: () => `+=${totalScroll}`,
+    scrub: 1,
+    pin: true,
+    anticipatePin: 1,
+  }
+});
 
 });
