@@ -195,4 +195,23 @@ const introObserver = new IntersectionObserver(entries => {
 
 introElements.forEach(el => introObserver.observe(el));
 
+// Horizontal Scroll for Skills Section
+  gsap.registerPlugin(ScrollTrigger);
+
+  const skillsContainer = document.querySelector(".skills-container");
+  const totalScroll = skillsContainer.scrollWidth - window.innerWidth;
+
+  gsap.to(skillsContainer, {
+    x: () => `-${totalScroll}px`,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".skills-section",
+      start: "top top",
+      end: () => `+=${totalScroll}`,
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1,
+    }
+  });
+
 });
