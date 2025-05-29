@@ -34,12 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ----- Mouse Circle with Dot -----
-
+   // Create the cursor
   const cursor = document.createElement('div');
   cursor.className = 'cursor-main';
   document.body.appendChild(cursor);
 
+  // Inject dynamic styles
   const style = document.createElement('style');
   style.textContent = `
     .cursor-main {
@@ -55,31 +55,23 @@ document.addEventListener('DOMContentLoaded', () => {
       background-color: #886BF2;
       box-shadow: 0 0 30px #af83ff;
       mix-blend-mode: difference;
-      transform: translate(-50%, -50%);
-      transition: top 0.1s ease-out, left 0.1s ease-out, width 0.1s ease-out, height 0.1s ease-out;
-      animation: breathe 2s ease-in-out infinite;
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform 0.3s ease, top 0.08s ease, left 0.08s ease;
     }
 
-    @keyframes breathe {
-      0%, 100% {
-        transform: translate(-50%, -50%) scale(1);
+    @media (max-width: 1280px) {
+      .cursor-main {
+        display: none;
       }
-      50% {
-        transform: translate(-50%, -50%) scale(1.5);
-      }
-    }
-
-    @media (max-width: 1280px){
-      .cursor-main{display:none;}
     }
   `;
   document.head.appendChild(style);
 
-  // Animate cursor following the mouse
+  // Cursor follows mouse
   let mouseX = 0, mouseY = 0;
   let currentX = 0, currentY = 0;
 
-  window.addEventListener('mousemove', (e) => {
+  window.addEventListener('mousemove', e => {
     mouseX = e.clientX;
     mouseY = e.clientY;
   });
@@ -94,6 +86,32 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animateCursor);
   }
   animateCursor();
+
+  // Smooth sinusoidal breathing (continuous)
+  let breathing = true;
+  let t = 0;
+
+  function breathLoop() {
+    if (breathing) {
+      const scale = 1 + 0.5 * Math.sin(t);
+      cursor.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      t += 0.05;
+    }
+    requestAnimationFrame(breathLoop);
+  }
+  breathLoop();
+
+  // Link hover disables breathing, scales to 0
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('mouseenter', () => {
+      breathing = false;
+      cursor.style.transform = `translate(-50%, -50%) scale(0)`;
+    });
+    link.addEventListener('mouseleave', () => {
+      cursor.style.transform = `translate(-50%, -50%) scale(1)`;
+      setTimeout(() => breathing = true, 300); // resume breathing smoothly
+    });
+  });
 
 
   // ----- Smart Back Button Behavior -----
