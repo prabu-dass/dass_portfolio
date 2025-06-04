@@ -296,6 +296,23 @@ h4{
             font-size: 13px;
         }
 
+        .resume-button{
+            text-decoration: none;
+            color: #8d8d8d;
+            font-size: 13px;
+            border: 1px solid #8d8d8d;
+            padding: 10px 20px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            margin-top: -10px;
+        }
+
+        .resume-button:hover{
+            background-color: #8d8d8d;
+            color:#1a1a1a
+        }
+
 .showreel {
     width: 59%;
     display: flex;
@@ -612,33 +629,53 @@ display: flex;
 }
 
 .whatiknow-item{
-    padding: 20px;
+    padding: 30px;
     margin: -1px 0;
     --s: 20px; /* size of the corners */
-    border: 1px solid #8d8d8d; 
+    border: 1px solid #666666 ; 
     mask: 
         conic-gradient(#000 0 0) content-box,
         conic-gradient(at var(--s) var(--s),#0000 75%,#000 0) 
         0 0/calc(100% - var(--s)) calc(100% - var(--s));
+        
 }
+
 
 .whatiknow-item h1{
     font-weight: 400;
     color: #dddddd;
-}
-
-.exp-skills{
-    font-size: 14px;
     margin: 0;
-    padding:0;
 }
 
-.exp-skills li{
-    list-style-type: none;
-    padding: 5px;
-    margin: 2px 0;
-    border: 1px solid #2d2d2d;
-    display: inline-block;
+.whatiknow-item p{
+    font-size: 14px;
+}
+
+.exp-skills {
+  margin: 20px 0 0;
+  padding: 0;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.4s ease;
+  pointer-events: none;
+}
+
+.whatiknow-item:hover .exp-skills {
+  opacity: 1;
+  max-height: 300px;
+  pointer-events: auto;
+}
+
+.exp-skills li {
+  list-style-type: none;
+  font-size: 13px;
+  padding: 5px;
+  margin: 5px 0;
+  border: 1px solid #666666;
+  display: inline-block;
+  color: #ccc;
+  background-color: #2d2d2d;
 }
 
 /* Skills Section */
