@@ -439,7 +439,7 @@ h4{
   height: auto;
 }
 
-.exp-title h1, .skills-title h1, .whatiknow-left h1{
+.exp-title h1, .skills-title h1, .whatiknow-left h1, .contact-inner h1{
     text-align: center;
     font-weight: 200 !important;
     background: linear-gradient(to bottom, #9255f5, #843DF5, #000);
@@ -469,7 +469,7 @@ h4{
 
 .experience-item{
     color: #dddddd;
-    width: 33.3%;
+    width: 50%;
     height: auto;
     border-style: solid;
     border-width: 5px;
@@ -489,7 +489,7 @@ h4{
 }
 
 .experience-item1, .experience-item2{
-    border-width: 0 0.5px 0 0;
+    border-width: 0 3px 0 0;
 }
 
 .experience-item3{
@@ -622,7 +622,7 @@ display: flex;
 }
 
 .border{
-    border: 1px dotted #2d2d2d ; 
+    border: 1px dashed #2d2d2d ; 
 }
 
 .whatiknow-left h1{
@@ -943,6 +943,29 @@ display: flex;
     }
 }*/
 
+.contact-inner{
+    height: auto;
+    width: 80%;
+    padding: 10% 0;
+    margin: 0 auto;
+}
+
+.contact-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 10%;
+}
+
+.contact-items{
+    border: 0.5px solid #2d2d2d;
+    padding: 20px 70px;
+}
+
+.contact-items a{
+    text-decoration: none;
+    color:#8d8d8d;
+}
 
 .footer{
     height: 40vh;
