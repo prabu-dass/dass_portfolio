@@ -619,7 +619,6 @@ display: flex;
 
 .whatiknow-left, .whatiknow-right{
     width:50%;
-    
 }
 
 .border{
@@ -627,10 +626,20 @@ display: flex;
 }
 
 .whatiknow-left h1{
-    margin: -52px;
     background: linear-gradient(to bottom, #9255f5, #843DF5, #000);
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin: 0px;
+}
+
+.whatiknow-left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.whatiknow-left img{
+    width: 50%;
 }
 
 .whatiknow-inner{
