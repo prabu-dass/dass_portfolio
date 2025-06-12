@@ -1258,4 +1258,12 @@ display: flex;
     .skills-section {
         padding-bottom: 20%;
     }
+
+    .contact-inner{
+        width: 90%;
+    }
+
+    .contact-container{
+        flex-direction: column;
+    }
 }
