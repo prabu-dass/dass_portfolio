@@ -48,7 +48,7 @@ a::after{
     font-size: 11px;
 }
 
-.profile-inner, .about-inner, .work-inner, .projects-inner, .awards-inner, .education-inner{
+.profile-inner, .about-inner, .work-inner, .projects-inner, .awards-inner, .education-inner, .contact-inner{
     padding: 5% 0;
 }
 
@@ -83,18 +83,18 @@ a::after{
 
 /*Work*/
 
-.work-item, .projects-item, .education-item{
+.work-item, .projects-item, .education-item, .contact-item{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     margin-top: 30px;
 }
 
-.exp-year, .projects-year, .education-year{
+.exp-year, .projects-year, .education-year, .contact-year{
     width: 20%;
 }
 
-.exp-des, .projects-des, .education-des{
+.exp-des, .projects-des, .education-des, .contact-des{
     width: 80%;
     display: flex;
     flex-direction: column;   
@@ -128,7 +128,6 @@ a::after{
     display: flex;
     flex-direction: column;
     align-items: flex-start; 
-    gap: 8px;
 }
 
 .awards-items img{
@@ -146,4 +145,33 @@ a::after{
 
 .awards-items p{
     padding-left: 10px;
+}
+
+/*Contact*/
+
+.contact-inner{
+    padding-bottom: 0;
+}
+
+.contact-item{
+    margin:0;
+}
+
+.contact-inner .contact-item:first-of-type{
+    padding-top: 2.5% !important;
+}
+
+
+/* Medium devices (tablets, 600px to 1280px) */
+@media (max-width: 1280px) {
+    body{
+        width: 80%;
+    }
+}
+
+/* Small devices (phones, 599px and down) */
+@media (max-width: 599px) {
+    body{
+        width: 95%;
+    }
 }
