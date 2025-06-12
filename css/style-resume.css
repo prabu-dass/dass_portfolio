@@ -170,12 +170,15 @@ a::after{
 @media (max-width: 1280px) {
     body{
         width: 80%;
+        margin: 0 auto;
     }
 }
 
 /* Small devices (phones, 599px and down) */
 @media (max-width: 599px) {
     body{
-        width: 95%;
+        width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
     }
 }
