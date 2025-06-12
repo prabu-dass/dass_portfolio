@@ -23,8 +23,9 @@ h4{
 }
 
 .highlight{
-    font-weight: 600;
+    font-weight: 400;
     font-size: 14px;
+    text-decoration: underline;
 }
 
 p{
@@ -131,8 +132,8 @@ a::after{
 }
 
 .awards-items img{
-    width: 32px;
-    height: 32px;
+    width: 27px;
+    height: 27px;
     flex-shrink: 0;
 }
 
