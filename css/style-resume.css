@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Work+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Faustina:ital,wght@0,300..800;1,300..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap');
+
+body{
+    scroll-behavior: smooth;
+    font-family: 'Work Sans', sans-serif;
+    width: 50%;
+    margin: 0 auto;
+}
+
+h1,h4,p{
+    margin: 0;
+    padding: 5px 0;
+}
+
+h4{
+    font-weight: 300;
+    font-size: medium;
+}
+
+.bold{
+    font-weight: 600;
+}
+
+.highlight{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+p{
+    font-size:13px ;
+    line-height: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: #2d2d2d;
+    font-size: 14px;
+}
+
+a::after{
+    content: "\f08e"; /* Unicode for fa-arrow-up-right-from-square */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 600; /* solid style */
+    margin-left: 6px;
+    display: inline-block;
+    font-size: 11px;
+}
+
+.profile-inner, .about-inner, .work-inner, .projects-inner, .awards-inner, .education-inner{
+    padding: 5% 0;
+}
+
+.resume{
+    padding: 5%;
+    margin: 5% 0;
+    background-color: #f6f6ff;
+}
+
+/*Profile*/
+
+.profile-inner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 !important;
+}
+
+.profile-item{
+    width: auto;
+}
+
+.profile-item img{
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.details{
+    padding-left: 20px;
+}
+
+/*Work*/
+
+.work-item, .projects-item, .education-item{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.exp-year, .projects-year, .education-year{
+    width: 20%;
+}
+
+.exp-des, .projects-des, .education-des{
+    width: 80%;
+    display: flex;
+    flex-direction: column;   
+}
+
+.role-inner{
+    margin-top: 10px;
+    position: relative;
+}
+
+.role-inner h4{
+    font-size: small;
+}
+
+.role-inner p{
+    padding-left: 12px;
+    color: #4d4d4d;
+}
+
+.role-inner p::before{
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #2d2d2d;
+    font-weight: bold;
+}
+
+/*Awards*/
+
+.awards-inner{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    gap: 8px;
+}
+
+.awards-items img{
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.awards-items{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2.5% 0;
+}
+
+.awards-items p{
+    padding-left: 10px;
+}
