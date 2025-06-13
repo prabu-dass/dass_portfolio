@@ -18,12 +18,13 @@
     margin: 0 auto!important;
     padding: 10% !important;
     box-sizing: border-box;
+    background-color: #fff !important;
   }
 
   .no-break {
     break-inside: avoid;
     page-break-inside: avoid;
-    padding: 5% 0 !important;
+    padding: 6% 0 !important;
   }
 
   .profile-inner, .about-inner, .work-inner, .projects-inner, .awards-inner, .education-inner, .contact-inner{
