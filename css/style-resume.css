@@ -213,3 +213,8 @@ a::after{
         margin: 0 auto;
     }
 }
+
+a:focus, button:focus, input:focus {
+    outline: 2px solid #843DF5;
+    outline-offset: 2px;
+}

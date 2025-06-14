@@ -1,6 +1,10 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Work+Sans:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Faustina:ital,wght@0,300..800;1,300..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Space+Grotesk:wght@300..700&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     height: 100%;
     margin: 0 !important;
@@ -11,25 +15,23 @@ body {
     scroll-behavior: smooth;
 }
 
-.html {
-    scroll-behavior: smooth;
-}
-
-
 h1, h2, .section-title {
-  font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
 
-p{
+p {
     font-size: 13px;
     color: #8d8d8d;
 }
 
-h4{
+h4 {
     color: #dddddd;
     font-weight: 600;
     font-size: 13px;
 }
+
+.bold { font-weight: bold; color: #999; }
+.highlight { color: #843DF5; font-weight: bold; }
 
 /*Resume Button*/
 
@@ -58,7 +60,7 @@ h4{
   font-size: large;
 }
 
-.resume a::before{
+.resume a::before {
     position: fixed;
     content: "";
     box-shadow: 0 0 100px 40px #ffffff08;
@@ -69,27 +71,27 @@ h4{
     transition: 0.7s all;
 }
 
-.resume a:hover{
+.resume a:hover {
     border: 1px solid #ffffff44;
     box-shadow: 0 7px 50px 10px #000000aa;
     transform: scale(1.015);
     filter: brightness(1.3);
 }
 
-.resume a:hover::before{
-     filter: brightness(0.5);
-  top: -100%;
-  left: 200%;
+.resume a:hover::before {
+    filter: brightness(0.5);
+    top: -100%;
+    left: 200%;
 }
 
 .resume img {
-  width: 60px;
-  margin-left: -15px;
-  height: auto;
-  object-fit: cover; 
+    width: 60px;
+    margin-left: -15px;
+    height: auto;
+    object-fit: cover; 
 }
 
-.resume-inner{
+.resume-inner {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -169,20 +171,14 @@ h4{
   box-sizing: border-box;
 }
 
-.header-left,
-.header-center,
-.header-right {
+.header-left, .header-center, .header-right {
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 16px;
 }
 
-.header-center{
-    font-size: 16px;
-}
-
-.header-center a{
+.header-center a {
     text-decoration: none;
     color: #8d8d8d;
     font-size: 16px;
@@ -190,39 +186,37 @@ h4{
     text-transform: uppercase;
 }
 
-.fa {
-  font-size: 18px;
-}
+.fa { font-size: 18px; }
 
-.phone{
+.phone {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.phone a{
+.phone a {
     padding-left: 10px;
     color: #8d8d8d;
     text-decoration: none;
 }
 
 .D-inline {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 0 50% 50% 0;
-  background-color: #843DF5;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 0 50% 50% 0;
+    background-color: #843DF5;
 }
 
 .l-name {
-        font-size: 18px;
-        color: #843DF5;
-        margin-left: -4px;
+    font-size: 18px;
+    color: #843DF5;
+    margin-left: -4px;
 }
 
 /* Home Section */
 
-.intro p{
+.intro p {
             padding-bottom: 10px;
         }
 
@@ -247,7 +241,7 @@ h4{
         z-index:1;
     }
 
-    .intro .title p{
+    .intro .title p {
         padding: 0;
         font-size: 15px;
         color: #dddddd;
@@ -257,7 +251,7 @@ h4{
         margin: 0;
     }
 
-    .intro .title .name{
+    .intro .title .name {
         display:flex;
         flex-direction:row;
     }
@@ -368,18 +362,18 @@ h4{
             color: #dddddd;
         }
         
-        .intro .about .about-inside p{
+        .intro .about .about-inside p {
             font-size: 14px;
         }
 
-        .about-inside h4{
+        .about-inside h4 {
             color: #dddddd;
             margin: 10px 0;
             font-weight: 600;
             font-size: 13px;
         }
 
-        .resume-button{
+        .resume-button {
             text-decoration: none;
             color: #8d8d8d;
             font-size: 13px;
@@ -391,7 +385,7 @@ h4{
             margin-top: -10px;
         }
 
-        .resume-button:hover{
+        .resume-button:hover {
             background-color: #8d8d8d;
             color:#1a1a1a
         }
@@ -672,6 +666,7 @@ display: flex;
   height: 32px;
   flex-shrink: 0;
   margin-top: 4px;
+  filter: invert(40%);
 }
 
 .coin p, .award p {
