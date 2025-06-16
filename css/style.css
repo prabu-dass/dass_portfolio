@@ -390,6 +390,95 @@ h4 {
             color:#1a1a1a
         }
 
+.video{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(132, 61, 245, 0.15);
+  box-shadow: 0 0 0 0 rgba(132, 61, 245, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.3s;
+  z-index: 1;
+  overflow: visible;
+}
+
+.play-button::before,
+.play-button::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.play-button::before {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #843DF5;
+  opacity: 0.7;
+  animation: ringPulse 2s infinite;
+}
+
+.play-button::after {
+  width: 120%;
+  height: 120%;
+  border: 5px solid #843DF5;
+  opacity: 0.4;
+  animation: ringPulse 2s infinite 0.5s;
+}
+
+@keyframes ringPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.7);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* Triangle (play icon) */
+.play-button span {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 0;
+  margin-left: 7px;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 22px solid #843DF5;
+  z-index: 2;
+  filter: drop-shadow(0 0 6px #843DF5aa);
+}
+
+/* Center the triangle */
+.play-button {
+  justify-content: center;
+  align-items: center;
+}
+
+.play-button:hover {
+  box-shadow: 0 0 0 8px rgba(132, 61, 245, 0.15);
+  background: rgba(132, 61, 245, 0.25);
+}
+
 .showreel {
     width: 59%;
     display: flex;
@@ -1083,6 +1172,11 @@ display: flex;
 
 /* Medium devices (tablets, 600px to 1280px) */
 @media (max-width: 1280px) {
+
+    .header-center{
+        display: none;
+    }
+
     .fixed-header{
         padding: 0 7%;
     }
@@ -1211,10 +1305,6 @@ display: flex;
         padding: 0 5%;
     }
 
-    .header-center{
-        display: none;
-    }
-
     .home-section .home {
         width: 90%;
         padding-top: 20%;
@@ -1260,5 +1350,9 @@ display: flex;
 
     .contact-container{
         flex-direction: column;
+    }
+
+    .contact-items{
+        margin-top: 10px;
     }
 }
