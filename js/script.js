@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Breathing effect
     let breathing = true;
+    let hoveringLink = false;
     let t = 0;
     function breathLoop() {
       if (breathing) {
@@ -62,14 +63,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Link hover disables breathing, scales to 0
     document.querySelectorAll('a').forEach(link => {
       link.addEventListener('mouseenter', () => {
+        hoveringLink = true;
         breathing = false;
         cursor.style.transform = `translate(-50%, -50%) scale(0)`;
       });
       link.addEventListener('mouseleave', () => {
-        cursor.style.transform = `translate(-50%, -50%) scale(1)`;
-        setTimeout(() => breathing = true, 300);
+        // Use setTimeout to allow for quick movement between links
+        setTimeout(() => {
+          // Check if the mouse is still over any <a>
+          if (!document.querySelector(':hover').closest('a')) {
+            hoveringLink = false;
+            cursor.style.transform = `translate(-50%, -50%) scale(1)`;
+            setTimeout(() => breathing = true, 300);
+          }
+        }, 10);
       });
     });
+
+    // Optional: If you want to be extra robust, listen for mousemove on document
+    document.addEventListener('mousemove', (e) => {
+      if (!e.target.closest('a') && hoveringLink) {
+        hoveringLink = false;
+        cursor.style.transform = `translate(-50%, -50%) scale(1)`;
+        setTimeout(() => breathing = true, 300);
+      }
+    });
+
   }
 
   // URL scroll to section
