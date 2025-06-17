@@ -717,7 +717,7 @@ h4 {
 }
 
 .awards{
-      padding: 50px 0;
+      padding: 5% 0;
 }
 
 .award-line{
@@ -765,7 +765,11 @@ display: flex;
 .highlight{
    font-size: 14px;
    font-weight: 600;
-   color: #9255f5;
+   color: #8d8d8d;
+}
+
+.exp-achievements{
+    padding: 5% 0;
 }
 
 
