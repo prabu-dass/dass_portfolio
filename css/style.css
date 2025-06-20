@@ -1137,6 +1137,14 @@ display: flex;
     margin: 0;
 }
 
+.link-overlay-mob{
+    position: absolute;
+    opacity: 0;
+    z-index: 2;
+    width: 30px;
+    height: 30px;
+}
+
 
 /* SHAKE EFFECT
 
