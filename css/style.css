@@ -13,6 +13,7 @@ body {
     background-color: #000;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    font-size: 100%;
 }
 
 h1, h2, .section-title {
@@ -605,7 +606,7 @@ h4 {
     -webkit-text-fill-color: transparent;
     background-clip: text; 
     color: transparent;
-    font-size: 80px;
+    font-size: 4em;
     margin-bottom: -20px; 
     text-transform: uppercase;
 }
@@ -745,7 +746,7 @@ display: flex;
 
 .coin, .award{
   display: flex;
-  align-items: flex-start; 
+  align-items: center; 
   gap: 8px;
   padding-bottom: 20px;
 }
@@ -1095,17 +1096,45 @@ display: flex;
 
 .skills-section-mob{
     display: none;
+    width: 100%;
 }
 
 .skills-inner-mob{
-    width: 80%;
+    
     margin: 0 auto;
     padding: 5%;
+    border: 0.5px solid #2d2d2d;
+    display: flex;
+    justify-content: center;
 }
 
 .skills-container-mob{
+    width: 80%;
+}
+
+.skills-item-mob{
+    padding: 15% 0;
+    border-bottom: 0.5px solid #2d2d2d;
+}
+
+.skills-item-mob:nth-last-child(1){
+    border: none;
+}
+
+.img-wrapper-mob{
     display: flex;
-    flex-direction: column;;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.numbercount-mob{
+    position: absolute;
+    color: #2d2d2d;
+    left: 8px;
+    z-index: 2;
+    top: 0;
+    display: flex;
+    margin: 0;
 }
 
 
