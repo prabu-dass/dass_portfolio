@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
           titleObserver.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.6 });
+    }, { threshold: 0.15 }); // Lower threshold for better mobile support
     titleObserver.observe(title);
   }
 
@@ -142,6 +142,54 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { threshold: 0.2 });
     items.forEach(item => itemsObserver.observe(item));
+  }
+
+  // Animate .whatiknow-left from left
+  const whatiknowLeft = document.querySelector('.whatiknow-left');
+  if (whatiknowLeft) {
+    const leftObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          whatiknowLeft.classList.add('in-view');
+          leftObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    leftObserver.observe(whatiknowLeft);
+  }
+
+  // Animate .skills-container from right — once
+  const skillsContainer = document.querySelector('.skills-container');
+  if (skillsContainer) {
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          skillsContainer.classList.add('in-view');
+          skillsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    skillsObserver.observe(skillsContainer);
+  }
+
+  // Animate .whatiknow-right-items > .border from right, staggered
+  const rightItems = document.querySelectorAll('.whatiknow-right-items .border');
+  if (rightItems.length) {
+    const rightObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Stagger effect
+          setTimeout(() => {
+            entry.target.classList.add('in-view');
+          }, Number(entry.target.dataset.index || 0) * 200);
+          rightObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    rightItems.forEach((el, i) => {
+      el.dataset.index = i;
+      rightObserver.observe(el);
+    });
   }
 
   // Animate .intro section children from bottom — once

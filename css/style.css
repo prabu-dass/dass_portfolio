@@ -775,6 +775,27 @@ display: flex;
 
 /* Whatiknow section */
 
+
+.whatiknow-left {
+  transform: translateX(-200px);
+  opacity: 0;
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+.whatiknow-left.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.whatiknow-right-items .border {
+  transform: translateX(500px);
+  opacity: 0;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s;
+}
+.whatiknow-right-items .border.in-view {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .whatiknow-section{
     height: auto;
     padding: 10% 0;
@@ -884,7 +905,6 @@ display: flex;
 }
 
 /* Skills Section */
-
 
 .arrow {
     transform: translate(-50%, -50%);
