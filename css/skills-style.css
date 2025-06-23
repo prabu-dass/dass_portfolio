@@ -209,7 +209,7 @@ html {
     }
 
     .projects-container:hover .project{
-        transform: translateX(-100px);
+        transform: translateX(-50px);
     }
 
 .project-skills{
