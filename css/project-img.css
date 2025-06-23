@@ -139,14 +139,19 @@
 
 /*2D Animation*/
 
-.graphic_proj5 {
+.animation2d_proj2 {
     background-image: url("../skills/images/refer_earn.png");
     background-color: #F2F7FE;
 }
 
-.graphic_proj18 {
+.animation2d_proj3 {
     background-image: url("../skills/images/dass_reel.png");
     background-color: #CAC1F2;
+}
+
+.animation2d_proj1 {
+    background-image: url("../skills/images/plato_trends.png");
+    background-color: #000000;
 }
 
 /*3D Animation*/
