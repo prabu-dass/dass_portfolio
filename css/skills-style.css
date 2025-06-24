@@ -216,6 +216,11 @@ html {
     padding: 0;
 }
 
+.active{
+    border-bottom: 5px solid #5F49F2;
+    font-weight: 600;
+}
+
 .project-skills li{
     list-style-type: none;
     font-size: 13px;
