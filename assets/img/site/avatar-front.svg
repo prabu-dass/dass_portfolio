@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" class="avatar-svg" data-avatar-svg="">
+  <!--
+    Front view of Prabu's portrait, matched to his photo: thick swept-up hair, trimmed full beard
+    with a connected mustache, a smile, and a navy shirt collar. Palette from the original vector.
+    Each <g data-depth="n"> is a depth layer: on head turn it shifts n units horizontally
+    (negative = behind the face). Eyes are <g data-eye> with a [data-pupil] that tracks the pointer.
+    No blur filters: soft glows are gradients, because filters re-rasterise every animated frame.
+  -->
+  <defs>
+    <radialGradient id="av-skin" cx="42%" cy="36%" r="72%">
+      <stop offset="0" stop-color="#ffcf9b"/>
+      <stop offset=".45" stop-color="#ffb173"/>
+      <stop offset="1" stop-color="#ef8f5a"/>
+    </radialGradient>
+    <radialGradient id="av-ear" cx="40%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#ffc58f"/>
+      <stop offset="1" stop-color="#f79d66"/>
+    </radialGradient>
+    <linearGradient id="av-neck" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ee8a58"/>
+      <stop offset=".4" stop-color="#ffaf72"/>
+      <stop offset="1" stop-color="#f6a068"/>
+    </linearGradient>
+    <radialGradient id="av-dark" cx="40%" cy="22%" r="85%">
+      <stop offset="0" stop-color="#4d3640"/>
+      <stop offset=".5" stop-color="#2c1c22"/>
+      <stop offset="1" stop-color="#170e11"/>
+    </radialGradient>
+    <radialGradient id="av-beard" cx="45%" cy="18%" r="85%">
+      <stop offset="0" stop-color="#46313a"/>
+      <stop offset=".55" stop-color="#2c1c22"/>
+      <stop offset="1" stop-color="#170e11"/>
+    </radialGradient>
+    <radialGradient id="av-eye" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#5a4350"/>
+      <stop offset=".6" stop-color="#2a1a20"/>
+      <stop offset="1" stop-color="#140b0e"/>
+    </radialGradient>
+    <linearGradient id="av-nose" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffa173"/>
+      <stop offset="1" stop-color="#ee7c4d"/>
+    </linearGradient>
+    <linearGradient id="av-lips" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f08a63"/>
+      <stop offset="1" stop-color="#d9643e"/>
+    </linearGradient>
+    <linearGradient id="av-shirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3470"/>
+      <stop offset="1" stop-color="#161b3f"/>
+    </linearGradient>
+    <linearGradient id="av-collar" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a4488"/>
+      <stop offset="1" stop-color="#1f2654"/>
+    </linearGradient>
+    <linearGradient id="av-hairline" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c1c22" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#2c1c22" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="av-glow"><stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <clipPath id="av-face-clip">
+      <path d="M138 282 Q138 210 210 210 L390 210 Q462 210 462 282 L462 420 A162 162 0 0 1 138 420 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- neck and shirt collar (anchored, barely moves) -->
+  <g data-depth="-2">
+    <path d="M208 540 C212 578 214 604 216 632 L300 694 L384 632 C386 604 388 578 392 540 Z" fill="url(#av-neck)"/>
+    <path d="M104 760 C112 696 160 664 214 646 L300 706 L386 646 C440 664 488 696 496 760 Z" fill="url(#av-shirt)"/>
+    <path d="M216 622 L300 700 L262 716 L198 658 Z" fill="url(#av-collar)"/>
+    <path d="M384 622 L300 700 L338 716 L402 658 Z" fill="url(#av-collar)"/>
+    <path d="M216 622 L300 700 L384 622" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="300" cy="728" r="4" fill="#3c4690"/>
+  </g>
+
+  <!-- back hair: thick, swept up and slightly to his left, tapered at the sides -->
+  <g data-depth="-12">
+    <path fill="url(#av-dark)" d="M140 345 Q130.9 326.8 129 305 Q122.6 284.5 124 262 Q113 241.1 128 220 Q126.2 199.2 140 182 Q137.4 159.2 158 148 Q163.8 127.9 182 118 Q189.1 95.7 212 94 Q225.7 78.2 246 77 Q262.3 59.3 284 67 Q303.1 56.5 322 62 Q343.9 50.3 360 64 Q381.3 60.7 396 72 Q419.5 69.3 428 88 Q446.7 94.4 454 112 Q472.7 119.6 470 142 Q481.3 156.7 478 178 Q491.6 194 480 216 Q486 235.8 476 256 Q475.9 278.9 468 300 Q467.6 324.3 460 345 L452 360 L148 360 Z"/>
+    <ellipse cx="260" cy="100" rx="120" ry="26" fill="url(#av-glow)" opacity=".13" transform="rotate(-12 260 100)"/>
+  </g>
+
+  <!-- ears -->
+  <g data-depth="-16">
+    <rect x="94" y="318" width="70" height="108" rx="35" fill="url(#av-ear)"/>
+    <rect x="114" y="342" width="36" height="58" rx="18" fill="#f98b5a"/>
+    <rect x="436" y="318" width="70" height="108" rx="35" fill="url(#av-ear)"/>
+    <rect x="450" y="342" width="36" height="58" rx="18" fill="#f98b5a"/>
+  </g>
+
+  <!-- face -->
+  <g data-depth="0">
+    <path d="M138 282 Q138 210 210 210 L390 210 Q462 210 462 282 L462 420 A162 162 0 0 1 138 420 Z" fill="url(#av-skin)"/>
+    <!-- sideburns running from hair into the beard -->
+    <path d="M136 318 L156 318 L160 410 L134 410 Z" fill="#2c1c22"/>
+    <path d="M464 318 L444 318 L440 410 L466 410 Z" fill="#2c1c22"/>
+  </g>
+
+  <!-- moving light on the face (shifts against the turn, so the head reads as round) -->
+  <g data-depth="-7" clip-path="url(#av-face-clip)">
+    <ellipse cx="252" cy="282" rx="130" ry="60" fill="url(#av-glow)" opacity=".3"/>
+    <rect x="130" y="230" width="340" height="60" fill="url(#av-hairline)"/>
+  </g>
+
+  <!-- cheeks -->
+  <g data-depth="8">
+    <circle cx="198" cy="398" r="40" fill="#f78b5c" opacity=".3"/>
+    <circle cx="402" cy="398" r="40" fill="#f78b5c" opacity=".3"/>
+  </g>
+
+  <!-- beard: trimmed and full, along the jaw to a soft point at the chin -->
+  <g data-depth="6">
+    <path fill="url(#av-beard)" d="M134 372 C150 392 186 424 222 446 C240 457 252 462 262 466 L338 466 C348 462 360 457 378 446 C414 424 450 392 466 372 L466 428 C466 516 398 590 300 602 C202 590 134 516 134 428 Z"/>
+    <!-- texture: short strokes so it reads as hair, not a mask -->
+    <g stroke="#4a333c" stroke-width="3" stroke-linecap="round" opacity=".55" fill="none">
+      <path d="M176 470 l6 12 M200 498 l5 13 M228 524 l4 13 M262 546 l2 13 M300 556 l0 13 M338 546 l-2 13 M372 524 l-4 13 M400 498 l-5 13 M424 470 l-6 12"/>
+      <path d="M160 438 l7 10 M440 438 l-7 10 M214 560 l4 11 M386 560 l-4 11 M284 584 l1 11 M316 584 l-1 11"/>
+    </g>
+    <ellipse cx="214" cy="534" rx="70" ry="20" fill="url(#av-glow)" opacity=".12" transform="rotate(42 214 534)"/>
+  </g>
+
+  <!-- brows: thick and fairly straight -->
+  <g data-depth="12" data-brows="">
+    <path d="M196 318 C222 304 256 302 282 309" fill="none" stroke="#2c1c22" stroke-width="24" stroke-linecap="round"/>
+    <path d="M318 309 C344 302 378 304 404 318" fill="none" stroke="#2c1c22" stroke-width="24" stroke-linecap="round"/>
+  </g>
+
+  <!-- eyes -->
+  <g data-depth="12">
+    <g data-eye="" data-cx="244" data-cy="368">
+      <circle data-pupil="" cx="244" cy="368" r="26" fill="url(#av-eye)"/>
+      <circle cx="235" cy="358" r="8" fill="#fff" opacity=".95"/>
+      <circle cx="254" cy="379" r="3.5" fill="#fff" opacity=".6"/>
+    </g>
+    <g data-eye="" data-cx="356" data-cy="368">
+      <circle data-pupil="" cx="356" cy="368" r="26" fill="url(#av-eye)"/>
+      <circle cx="347" cy="358" r="8" fill="#fff" opacity=".95"/>
+      <circle cx="366" cy="379" r="3.5" fill="#fff" opacity=".6"/>
+    </g>
+  </g>
+
+  <!-- mouth: smile with teeth, lower lip, connected mustache -->
+  <g data-depth="14">
+    <path d="M258 474 C276 492 324 492 342 474 C336 500 316 510 300 510 C284 510 264 500 258 474 Z" fill="#2a1418"/>
+    <path d="M262 476 C280 488 320 488 338 476 C334 486 318 492 300 492 C282 492 266 486 262 476 Z" fill="#fff"/>
+    <path d="M272 500 C286 510 314 510 328 500 C322 512 312 516 300 516 C288 516 278 512 272 500 Z" fill="url(#av-lips)"/>
+    <path d="M236 480 C246 452 276 440 300 450 C324 440 354 452 364 480 C348 470 324 466 300 470 C276 466 252 470 236 480 Z" fill="#2c1c22"/>
+    <path d="M262 454 C276 448 290 449 300 453" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".16"/>
+  </g>
+
+  <!-- nose: the nearest point -->
+  <g data-depth="18">
+    <path d="M276 410 C276 398 288 392 300 392 C312 392 324 398 324 410 L334 430 C336 440 328 446 318 446 L282 446 C272 446 264 440 266 430 Z" fill="url(#av-nose)"/>
+    <ellipse cx="292" cy="410" rx="10" ry="5" fill="#fff" opacity=".4"/>
+    <ellipse cx="286" cy="438" rx="7" ry="4" fill="#d96a40" opacity=".55"/>
+    <ellipse cx="314" cy="438" rx="7" ry="4" fill="#d96a40" opacity=".55"/>
+  </g>
+
+  <!-- front hair: forehead cap with a natural hairline, and strands swept up -->
+  <g data-depth="5">
+    <path fill="url(#av-dark)" d="M142 334 C140 296 146 268 162 254 C188 240 222 236 258 236 C286 236 300 239 314 236 C350 232 396 236 428 248 C450 258 458 290 458 334 L470 300 C478 240 470 170 432 128 C400 96 350 86 300 86 C240 86 186 104 158 140 C134 172 128 236 132 300 Z"/>
+  </g>
+  <g data-depth="8">
+    <g fill="none" stroke="#4d3640" stroke-linecap="round">
+      <path d="M182 236 C188 190 214 150 262 122" stroke-width="7" opacity=".8"/>
+      <path d="M232 232 C246 182 286 142 348 124" stroke-width="7" opacity=".8"/>
+      <path d="M296 230 C318 186 362 156 420 152" stroke-width="6" opacity=".75"/>
+      <path d="M362 236 C384 206 414 190 446 190" stroke-width="5" opacity=".7"/>
+      <path d="M160 270 C160 230 172 196 196 168" stroke-width="5" opacity=".6"/>
+    </g>
+    <ellipse cx="290" cy="138" rx="110" ry="20" fill="url(#av-glow)" opacity=".2" transform="rotate(-10 290 138)"/>
+  </g>
+</svg>

@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Car cabin mockup (dev tool)</title>
+<!--
+  Renders an in-car scene with a UI screen on the centre display.
+  Query params:
+    img    path to the screen image (relative to this file)
+    theme  dusk | day | morning | night   (lighting + interior palette)
+    wide   1 for ultra-wide 1920x720 screens
+  Export: headless Edge at 1600x1000, e.g.
+    msedge --headless=new --window-size=1600,1000 --screenshot=out.png "http://localhost:5173/tools/car-mockup.html?img=..&theme=dusk"
+-->
+<style>
+  html, body { margin: 0; width: 1600px; height: 1000px; overflow: hidden; background: #000; }
+  .scene { position: relative; width: 1600px; height: 1000px; overflow: hidden; }
+  svg.cabin { position: absolute; inset: 0; }
+  .display {
+    position: absolute;
+    left: var(--dx); top: var(--dy); width: var(--dw);
+    transform: perspective(2600px) rotateY(-9deg) rotateX(3deg);
+    transform-origin: 60% 100%;
+    filter: drop-shadow(0 38px 40px rgb(0 0 0 / 0.55)) drop-shadow(0 6px 10px rgb(0 0 0 / 0.4));
+  }
+  .bezel {
+    position: relative;
+    padding: 12px;
+    border-radius: 26px;
+    background: linear-gradient(160deg, #2a2b30 0%, #0c0c0f 45%, #050506 100%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.18), inset 0 -1px 0 rgb(0 0 0 / 0.6);
+  }
+  .glass { position: relative; border-radius: 15px; overflow: hidden; background: #000; }
+  .glass img { display: block; width: 100%; height: auto; image-rendering: auto; }
+  .glass::after {
+    /* windshield reflection on the screen glass */
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      linear-gradient(115deg, rgb(255 255 255 / 0.16) 0%, rgb(255 255 255 / 0.05) 22%, transparent 38%),
+      linear-gradient(180deg, rgb(255 255 255 / 0.06), transparent 30%);
+    mix-blend-mode: screen;
+  }
+  .mount {
+    position: absolute; left: 50%; bottom: -46px; width: 34%; height: 58px; transform: translateX(-50%);
+    background: linear-gradient(180deg, #121215, #050506);
+    border-radius: 0 0 18px 18px;
+    z-index: -1;
+  }
+  .wheel { position: absolute; inset: 0; pointer-events: none; filter: blur(1.6px); }
+</style>
+</head>
+<body>
+<div class="scene" id="scene"></div>
+<script>
+const q = new URLSearchParams(location.search);
+const img = q.get("img") || "../assets/img/car-ux/screens/sand-home.jpg";
+const theme = q.get("theme") || "dusk";
+const wide = q.get("wide") === "1";
+
+const themes = {
+  dusk:    { sky: ["#f6c79a", "#f9e2c6", "#fbeedd"], sun: "#fff2d8", sunGlow: "#ffd7a1", hills: ["#d9a983", "#b98463", "#8c5e45"], road: "#6b4a3a", trim: "#2a211d", dash: ["#3a2e28", "#1d1714", "#0e0b0a"], accent: "#e07a33", cluster: "#f0a060", stars: false },
+  day:     { sky: ["#a9cdf2", "#d6e8f8", "#eef5fc"], sun: "#ffffff", sunGlow: "#eaf4ff", hills: ["#a9bfd2", "#7f99b0", "#5d7488"], road: "#4c5560", trim: "#1d2026", dash: ["#30343b", "#191b20", "#0b0c0f"], accent: "#3b7bff", cluster: "#8fb6ff", stars: false },
+  morning: { sky: ["#c9c3f2", "#e6dff8", "#fbeef0"], sun: "#fffaf2", sunGlow: "#ffe3ea", hills: ["#b9b1dc", "#9a90c6", "#7a6fa8"], road: "#555067", trim: "#1f1d27", dash: ["#34313f", "#1b1922", "#0c0b10"], accent: "#8a7dff", cluster: "#b9a8ff", stars: false },
+  night:   { sky: ["#070b24", "#111a46", "#2a2d6e"], sun: "#c8d0ff", sunGlow: "#4a4fb0", hills: ["#1a1d45", "#12143a", "#0a0b26"], road: "#151630", trim: "#08080d", dash: ["#1a1a26", "#0e0e16", "#060609"], accent: "#7a5cff", cluster: "#6f8bff", stars: true },
+};
+const t = themes[theme] || themes.dusk;
+
+// display geometry
+const dw = wide ? 820 : 690;
+const dx = wide ? 650 : 690;
+const dy = wide ? 470 : 405;
+
+const stars = t.stars ? Array.from({ length: 70 }, (_, i) => {
+  const x = (i * 137.5) % 1600, y = (i * 61.3) % 360;
+  return `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${(i % 3) * 0.5 + 0.6}" fill="#fff" opacity="${0.25 + (i % 5) * 0.12}"/>`;
+}).join("") : "";
+
+document.getElementById("scene").innerHTML = `
+<svg class="cabin" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${t.sky[0]}"/><stop offset=".55" stop-color="${t.sky[1]}"/><stop offset="1" stop-color="${t.sky[2]}"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="1110" cy="300" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="${t.sun}" stop-opacity="1"/><stop offset=".18" stop-color="${t.sunGlow}" stop-opacity=".85"/><stop offset="1" stop-color="${t.sunGlow}" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dash" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${t.dash[0]}"/><stop offset=".35" stop-color="${t.dash[1]}"/><stop offset="1" stop-color="${t.dash[2]}"/>
+    </linearGradient>
+    <linearGradient id="dashTop" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".16"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="${t.accent}" stop-opacity="0"/><stop offset=".25" stop-color="${t.accent}" stop-opacity=".95"/>
+      <stop offset=".75" stop-color="${t.accent}" stop-opacity=".95"/><stop offset="1" stop-color="${t.accent}" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="soft" x="-20%" y="-200%" width="140%" height="500%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="haze"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <radialGradient id="vignette" cx="800" cy="520" r="980" gradientUnits="userSpaceOnUse">
+      <stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".55"/>
+    </radialGradient>
+    <linearGradient id="pillarL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${t.trim}"/><stop offset="1" stop-color="${t.dash[1]}"/></linearGradient>
+    <linearGradient id="pillarR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="${t.trim}"/><stop offset="1" stop-color="${t.dash[1]}"/></linearGradient>
+    <radialGradient id="clusterGlow" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="${t.cluster}" stop-opacity=".55"/><stop offset="1" stop-color="${t.cluster}" stop-opacity="0"/></radialGradient>
+  </defs>
+
+  <!-- outside: sky, sun, hills, road -->
+  <rect width="1600" height="640" fill="url(#sky)"/>
+  ${stars}
+  <rect width="1600" height="640" fill="url(#sun)"/>
+  <g filter="url(#haze)">
+    <path d="M0 420 C 160 360 260 380 380 340 S 620 300 760 352 S 1000 318 1140 336 S 1420 300 1600 350 L1600 640 L0 640Z" fill="${t.hills[0]}" opacity=".75"/>
+    <path d="M0 470 C 200 420 330 452 500 418 S 820 404 980 438 S 1300 410 1600 446 L1600 640 L0 640Z" fill="${t.hills[1]}" opacity=".85"/>
+    <path d="M0 520 C 240 492 420 510 640 488 S 1080 486 1300 500 S 1500 492 1600 500 L1600 640 L0 640Z" fill="${t.hills[2]}"/>
+    <path d="M760 492 L 840 492 L 1060 640 L 560 640 Z" fill="${t.road}"/>
+    <path d="M798 496 L 802 496 L 812 640 L 790 640 Z" fill="#ffffff" opacity=".5"/>
+  </g>
+
+  <!-- roof liner and A-pillars -->
+  <path d="M0 0 H1600 V70 C 1200 110 400 110 0 70 Z" fill="${t.trim}"/>
+  <path d="M0 0 L 250 0 L 120 560 L 0 620 Z" fill="url(#pillarL)"/>
+  <path d="M1600 0 L 1360 0 L 1480 560 L 1600 620 Z" fill="url(#pillarR)"/>
+  <!-- rear-view mirror -->
+  <rect x="736" y="92" width="190" height="58" rx="22" fill="${t.trim}"/>
+  <rect x="746" y="100" width="170" height="42" rx="17" fill="${t.sky[1]}" opacity=".35"/>
+  <rect x="824" y="62" width="14" height="34" rx="6" fill="${t.trim}"/>
+
+  <!-- dashboard -->
+  <path d="M0 600 C 300 548 520 532 800 530 C 1080 532 1300 548 1600 600 L1600 1000 L0 1000 Z" fill="url(#dash)"/>
+  <path d="M0 600 C 300 548 520 532 800 530 C 1080 532 1300 548 1600 600 L1600 640 C 1300 592 1080 576 800 574 C 520 576 300 592 0 640 Z" fill="url(#dashTop)"/>
+  <!-- ambient light strip -->
+  <path d="M60 690 C 400 640 600 630 800 628 C 1000 630 1200 640 1540 690" stroke="url(#glow)" stroke-width="10" fill="none" filter="url(#soft)" opacity=".9"/>
+  <path d="M60 690 C 400 640 600 630 800 628 C 1000 630 1200 640 1540 690" stroke="url(#glow)" stroke-width="2.5" fill="none"/>
+  <!-- stitching line -->
+  <path d="M0 740 C 400 696 600 688 800 686 C 1000 688 1200 696 1600 740" stroke="#ffffff" stroke-opacity=".08" stroke-width="2" stroke-dasharray="7 9" fill="none"/>
+
+  <!-- air vents under the display -->
+  <g opacity=".9">
+    ${[0,1,2,3].map(i => `<rect x="${(wide ? 470 : 560) - 0}" y="${880 + i * 16}" width="${wide ? 220 : 180}" height="6" rx="3" fill="#000" opacity=".55"/>`).join("")}
+    ${[0,1,2,3].map(i => `<rect x="${wide ? 1230 : 1180}" y="${880 + i * 16}" width="${wide ? 220 : 180}" height="6" rx="3" fill="#000" opacity=".55"/>`).join("")}
+  </g>
+
+  <!-- instrument cluster behind the wheel -->
+  <rect x="160" y="565" width="360" height="145" rx="26" fill="#050507"/>
+  <rect x="160" y="565" width="360" height="145" rx="26" fill="url(#clusterGlow)"/>
+  <circle cx="262" cy="638" r="44" fill="none" stroke="${t.cluster}" stroke-opacity=".7" stroke-width="5" stroke-dasharray="190 400" transform="rotate(140 262 638)"/>
+  <circle cx="418" cy="638" r="44" fill="none" stroke="${t.cluster}" stroke-opacity=".45" stroke-width="5" stroke-dasharray="140 400" transform="rotate(140 418 638)"/>
+
+  <!-- centre console below -->
+  <path d="M${wide ? 700 : 760} 1000 C ${wide ? 720 : 780} 940 ${wide ? 760 : 820} 920 ${wide ? 990 : 990} 920 C ${wide ? 1220 : 1160} 920 ${wide ? 1260 : 1200} 940 ${wide ? 1280 : 1220} 1000 Z" fill="#000" opacity=".35"/>
+
+  <rect width="1600" height="1000" fill="url(#vignette)"/>
+</svg>
+
+<div class="display" style="--dx:${dx}px; --dy:${dy}px; --dw:${dw}px">
+  <div class="bezel"><div class="glass"><img src="${img}" alt=""></div></div>
+  <div class="mount"></div>
+</div>
+
+<svg class="wheel" viewBox="0 0 1600 1000" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3a40"/><stop offset=".25" stop-color="#17171b"/><stop offset="1" stop-color="#050506"/>
+    </linearGradient>
+  </defs>
+  <!-- steering wheel, foreground -->
+  <circle cx="340" cy="1020" r="300" fill="none" stroke="url(#rim)" stroke-width="58"/>
+  <circle cx="340" cy="1020" r="300" fill="none" stroke="#ffffff" stroke-opacity=".12" stroke-width="2" transform="translate(0 -24)"/>
+  <path d="M100 1010 C 175 945 255 915 340 915 C 425 915 505 945 580 1010" stroke="#0d0d10" stroke-width="58" fill="none"/>
+  <rect x="262" y="875" width="156" height="110" rx="42" fill="#0b0b0e"/>
+  <circle cx="340" cy="926" r="18" fill="none" stroke="${t.accent}" stroke-opacity=".7" stroke-width="3"/>
+</svg>`;
+</script>
+</body>
+</html>

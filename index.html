@@ -1,403 +1,615 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Dass - Portfolio</title>
-    <link rel="icon" type="image/x-icon" href="img/fav-icon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prabu Dass — UI/UX, Graphic Design &amp; Animation</title>
+  <meta name="description" content="Prabu Dass is a Chennai-based designer with eight years across UI/UX, brand identity, video editing and 2D/3D animation.">
+  <meta property="og:title" content="Prabu Dass — UI/UX, Graphic Design & Animation">
+  <meta property="og:description" content="Screens, identities and moving pictures, designed by one person who understands all three.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://prabudass-portfolio.netlify.app/assets/img/og-image.jpg">
+  <meta name="theme-color" content="#ECEEF1">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@50..150,300..900&family=Hanken+Grotesk:wght@400..700&display=swap">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>/* swallow "transition skipped" rejections from cross-document view transitions */for(const t of["pageswap","pagereveal"])addEventListener(t,e=>{const v=e.viewTransition;if(v)for(const p of["ready","finished","updateCallbackDone"])v[p]?.catch(()=>{});});</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Prabu Dass",
+    "jobTitle": "UI/UX Lead, Graphic Designer and Animator",
+    "address": { "@type": "PostalAddress", "addressLocality": "Chennai", "addressCountry": "IN" },
+    "email": "mailto:prabudass@proton.me",
+    "sameAs": ["https://www.linkedin.com/in/prabu-dass/"]
+  }
+  </script>
 </head>
 <body>
-    <div class="resume">
-      <a class="resume-inner" href="resume.html" target="_blank">
-        <img src="assets/resume.svg" alt="resume">
-        RESUME
-      </a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="index.html" aria-label="Prabu Dass, home">Prabu <span><span class="d">D</span>ass</span></a>
+      <nav class="nav" aria-label="Main">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">
+          <span class="nav-toggle-icon" aria-hidden="true"></span><span class="nav-toggle-label">Menu</span>
+        </button>
+        <ul class="nav-list" id="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="ui-ux.html">UI/UX Design</a></li>
+          <li><a href="graphic-design.html">Graphic Design</a></li>
+          <li><a href="video-animation.html">Video &amp; Animation</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li aria-hidden="true" class="nav-indicator"></li>
+        </ul>
+      </nav>
     </div>
-    <div class="fixed-header">
-        <div class="header-left">
-            <h3 style="display: flex; align-items: center; gap: 5px; margin: 0;">
-                Prabu
-                <div class="D-inline"></div>
-                <span class="l-name">ass</span>
-            </h3>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero hero--home" aria-labelledby="hero-title">
+      <div class="wrap hero-stage">
+        <div class="hero-copy">
+          <h1 class="hero-name" id="hero-title" data-hero-name aria-label="Prabu Dass">
+            <span class="line">Prabu</span>
+            <span class="line" data-dmark>Dass</span>
+          </h1>
+          <p class="lede" data-enter style="--i:0">I design the screens people use, the brands they remember and the films that explain them.</p>
+          <div class="hero-side" data-enter style="--i:1">
+            <p>Eight years across product design, identity and animation. Currently designing in-vehicle display UX in Chennai, and open to work with teams anywhere.</p>
+            <div class="btn-row">
+              <a class="btn" href="mailto:prabudass@proton.me?subject=Project%20enquiry">Start a project</a>
+              <a class="btn btn--ghost" href="#work">See selected work</a>
+            </div>
+            <ul class="hero-role" aria-label="Disciplines">
+              <li style="--c: var(--indigo)">UI/UX design</li>
+              <li style="--c: var(--ink)">Graphic design</li>
+              <li style="--c: var(--marigold)">Video &amp; animation</li>
+            </ul>
+          </div>
         </div>
-        <div class="header-center">
-            <a href="#home">Home</a>
-            <a href="#experience">Experience</a>
-            <a href="#whatiknow">What I know</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+
+        <div class="hero-avatar" data-enter style="--i:1">
+          <div class="avatar-orb" aria-hidden="true"></div>
+          <div class="avatar-stage" data-avatar role="img" aria-label="Illustrated 3D portrait of Prabu Dass. The head turns and the eyes follow your pointer.">
+            <div class="avatar-rig">
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" viewBox="0 0 600 760" class="avatar-svg" data-avatar-svg="">
+  <!--
+    Front view of Prabu's portrait, matched to his photo: thick swept-up hair, trimmed full beard
+    with a connected mustache, a smile, and a navy shirt collar. Palette from the original vector.
+    Each <g data-depth="n"> is a depth layer: on head turn it shifts n units horizontally
+    (negative = behind the face). Eyes are <g data-eye> with a [data-pupil] that tracks the pointer.
+    No blur filters: soft glows are gradients, because filters re-rasterise every animated frame.
+  -->
+  <defs>
+    <radialGradient id="av-skin" cx="42%" cy="36%" r="72%">
+      <stop offset="0" stop-color="#ffcf9b"/>
+      <stop offset=".45" stop-color="#ffb173"/>
+      <stop offset="1" stop-color="#ef8f5a"/>
+    </radialGradient>
+    <radialGradient id="av-ear" cx="40%" cy="35%" r="75%">
+      <stop offset="0" stop-color="#ffc58f"/>
+      <stop offset="1" stop-color="#f79d66"/>
+    </radialGradient>
+    <linearGradient id="av-neck" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ee8a58"/>
+      <stop offset=".4" stop-color="#ffaf72"/>
+      <stop offset="1" stop-color="#f6a068"/>
+    </linearGradient>
+    <radialGradient id="av-dark" cx="40%" cy="22%" r="85%">
+      <stop offset="0" stop-color="#4d3640"/>
+      <stop offset=".5" stop-color="#2c1c22"/>
+      <stop offset="1" stop-color="#170e11"/>
+    </radialGradient>
+    <radialGradient id="av-beard" cx="45%" cy="18%" r="85%">
+      <stop offset="0" stop-color="#46313a"/>
+      <stop offset=".55" stop-color="#2c1c22"/>
+      <stop offset="1" stop-color="#170e11"/>
+    </radialGradient>
+    <radialGradient id="av-eye" cx="38%" cy="32%" r="70%">
+      <stop offset="0" stop-color="#5a4350"/>
+      <stop offset=".6" stop-color="#2a1a20"/>
+      <stop offset="1" stop-color="#140b0e"/>
+    </radialGradient>
+    <linearGradient id="av-nose" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffa173"/>
+      <stop offset="1" stop-color="#ee7c4d"/>
+    </linearGradient>
+    <linearGradient id="av-lips" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f08a63"/>
+      <stop offset="1" stop-color="#d9643e"/>
+    </linearGradient>
+    <linearGradient id="av-shirt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b3470"/>
+      <stop offset="1" stop-color="#161b3f"/>
+    </linearGradient>
+    <linearGradient id="av-collar" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a4488"/>
+      <stop offset="1" stop-color="#1f2654"/>
+    </linearGradient>
+    <linearGradient id="av-hairline" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2c1c22" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#2c1c22" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="av-glow"><stop offset="0" stop-color="#fff" stop-opacity="1"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <clipPath id="av-face-clip">
+      <path d="M138 282 Q138 210 210 210 L390 210 Q462 210 462 282 L462 420 A162 162 0 0 1 138 420 Z"/>
+    </clipPath>
+  </defs>
+
+  <!-- neck and shirt collar (anchored, barely moves) -->
+  <g data-depth="-2">
+    <path d="M208 540 C212 578 214 604 216 632 L300 694 L384 632 C386 604 388 578 392 540 Z" fill="url(#av-neck)"/>
+    <path d="M104 760 C112 696 160 664 214 646 L300 706 L386 646 C440 664 488 696 496 760 Z" fill="url(#av-shirt)"/>
+    <path d="M216 622 L300 700 L262 716 L198 658 Z" fill="url(#av-collar)"/>
+    <path d="M384 622 L300 700 L338 716 L402 658 Z" fill="url(#av-collar)"/>
+    <path d="M216 622 L300 700 L384 622" fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="300" cy="728" r="4" fill="#3c4690"/>
+  </g>
+
+  <!-- back hair: thick, swept up and slightly to his left, tapered at the sides -->
+  <g data-depth="-12">
+    <path fill="url(#av-dark)" d="M140 345 Q130.9 326.8 129 305 Q122.6 284.5 124 262 Q113 241.1 128 220 Q126.2 199.2 140 182 Q137.4 159.2 158 148 Q163.8 127.9 182 118 Q189.1 95.7 212 94 Q225.7 78.2 246 77 Q262.3 59.3 284 67 Q303.1 56.5 322 62 Q343.9 50.3 360 64 Q381.3 60.7 396 72 Q419.5 69.3 428 88 Q446.7 94.4 454 112 Q472.7 119.6 470 142 Q481.3 156.7 478 178 Q491.6 194 480 216 Q486 235.8 476 256 Q475.9 278.9 468 300 Q467.6 324.3 460 345 L452 360 L148 360 Z"/>
+    <ellipse cx="260" cy="100" rx="120" ry="26" fill="url(#av-glow)" opacity=".13" transform="rotate(-12 260 100)"/>
+  </g>
+
+  <!-- ears -->
+  <g data-depth="-16">
+    <rect x="94" y="318" width="70" height="108" rx="35" fill="url(#av-ear)"/>
+    <rect x="114" y="342" width="36" height="58" rx="18" fill="#f98b5a"/>
+    <rect x="436" y="318" width="70" height="108" rx="35" fill="url(#av-ear)"/>
+    <rect x="450" y="342" width="36" height="58" rx="18" fill="#f98b5a"/>
+  </g>
+
+  <!-- face -->
+  <g data-depth="0">
+    <path d="M138 282 Q138 210 210 210 L390 210 Q462 210 462 282 L462 420 A162 162 0 0 1 138 420 Z" fill="url(#av-skin)"/>
+    <!-- sideburns running from hair into the beard -->
+    <path d="M136 318 L156 318 L160 410 L134 410 Z" fill="#2c1c22"/>
+    <path d="M464 318 L444 318 L440 410 L466 410 Z" fill="#2c1c22"/>
+  </g>
+
+  <!-- moving light on the face (shifts against the turn, so the head reads as round) -->
+  <g data-depth="-7" clip-path="url(#av-face-clip)">
+    <ellipse cx="252" cy="282" rx="130" ry="60" fill="url(#av-glow)" opacity=".3"/>
+    <rect x="130" y="230" width="340" height="60" fill="url(#av-hairline)"/>
+  </g>
+
+  <!-- cheeks -->
+  <g data-depth="8">
+    <circle cx="198" cy="398" r="40" fill="#f78b5c" opacity=".3"/>
+    <circle cx="402" cy="398" r="40" fill="#f78b5c" opacity=".3"/>
+  </g>
+
+  <!-- beard: trimmed and full, along the jaw to a soft point at the chin -->
+  <g data-depth="6">
+    <path fill="url(#av-beard)" d="M134 372 C150 392 186 424 222 446 C240 457 252 462 262 466 L338 466 C348 462 360 457 378 446 C414 424 450 392 466 372 L466 428 C466 516 398 590 300 602 C202 590 134 516 134 428 Z"/>
+    <!-- texture: short strokes so it reads as hair, not a mask -->
+    <g stroke="#4a333c" stroke-width="3" stroke-linecap="round" opacity=".55" fill="none">
+      <path d="M176 470 l6 12 M200 498 l5 13 M228 524 l4 13 M262 546 l2 13 M300 556 l0 13 M338 546 l-2 13 M372 524 l-4 13 M400 498 l-5 13 M424 470 l-6 12"/>
+      <path d="M160 438 l7 10 M440 438 l-7 10 M214 560 l4 11 M386 560 l-4 11 M284 584 l1 11 M316 584 l-1 11"/>
+    </g>
+    <ellipse cx="214" cy="534" rx="70" ry="20" fill="url(#av-glow)" opacity=".12" transform="rotate(42 214 534)"/>
+  </g>
+
+  <!-- brows: thick and fairly straight -->
+  <g data-depth="12" data-brows="">
+    <path d="M196 318 C222 304 256 302 282 309" fill="none" stroke="#2c1c22" stroke-width="24" stroke-linecap="round"/>
+    <path d="M318 309 C344 302 378 304 404 318" fill="none" stroke="#2c1c22" stroke-width="24" stroke-linecap="round"/>
+  </g>
+
+  <!-- eyes -->
+  <g data-depth="12">
+    <g data-eye="" data-cx="244" data-cy="368">
+      <circle data-pupil="" cx="244" cy="368" r="26" fill="url(#av-eye)"/>
+      <circle cx="235" cy="358" r="8" fill="#fff" opacity=".95"/>
+      <circle cx="254" cy="379" r="3.5" fill="#fff" opacity=".6"/>
+    </g>
+    <g data-eye="" data-cx="356" data-cy="368">
+      <circle data-pupil="" cx="356" cy="368" r="26" fill="url(#av-eye)"/>
+      <circle cx="347" cy="358" r="8" fill="#fff" opacity=".95"/>
+      <circle cx="366" cy="379" r="3.5" fill="#fff" opacity=".6"/>
+    </g>
+  </g>
+
+  <!-- mouth: smile with teeth, lower lip, connected mustache -->
+  <g data-depth="14">
+    <path d="M258 474 C276 492 324 492 342 474 C336 500 316 510 300 510 C284 510 264 500 258 474 Z" fill="#2a1418"/>
+    <path d="M262 476 C280 488 320 488 338 476 C334 486 318 492 300 492 C282 492 266 486 262 476 Z" fill="#fff"/>
+    <path d="M272 500 C286 510 314 510 328 500 C322 512 312 516 300 516 C288 516 278 512 272 500 Z" fill="url(#av-lips)"/>
+    <path d="M236 480 C246 452 276 440 300 450 C324 440 354 452 364 480 C348 470 324 466 300 470 C276 466 252 470 236 480 Z" fill="#2c1c22"/>
+    <path d="M262 454 C276 448 290 449 300 453" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".16"/>
+  </g>
+
+  <!-- nose: the nearest point -->
+  <g data-depth="18">
+    <path d="M276 410 C276 398 288 392 300 392 C312 392 324 398 324 410 L334 430 C336 440 328 446 318 446 L282 446 C272 446 264 440 266 430 Z" fill="url(#av-nose)"/>
+    <ellipse cx="292" cy="410" rx="10" ry="5" fill="#fff" opacity=".4"/>
+    <ellipse cx="286" cy="438" rx="7" ry="4" fill="#d96a40" opacity=".55"/>
+    <ellipse cx="314" cy="438" rx="7" ry="4" fill="#d96a40" opacity=".55"/>
+  </g>
+
+  <!-- front hair: forehead cap with a natural hairline, and strands swept up -->
+  <g data-depth="5">
+    <path fill="url(#av-dark)" d="M142 334 C140 296 146 268 162 254 C188 240 222 236 258 236 C286 236 300 239 314 236 C350 232 396 236 428 248 C450 258 458 290 458 334 L470 300 C478 240 470 170 432 128 C400 96 350 86 300 86 C240 86 186 104 158 140 C134 172 128 236 132 300 Z"/>
+  </g>
+  <g data-depth="8">
+    <g fill="none" stroke="#4d3640" stroke-linecap="round">
+      <path d="M182 236 C188 190 214 150 262 122" stroke-width="7" opacity=".8"/>
+      <path d="M232 232 C246 182 286 142 348 124" stroke-width="7" opacity=".8"/>
+      <path d="M296 230 C318 186 362 156 420 152" stroke-width="6" opacity=".75"/>
+      <path d="M362 236 C384 206 414 190 446 190" stroke-width="5" opacity=".7"/>
+      <path d="M160 270 C160 230 172 196 196 168" stroke-width="5" opacity=".6"/>
+    </g>
+    <ellipse cx="290" cy="138" rx="110" ry="20" fill="url(#av-glow)" opacity=".2" transform="rotate(-10 290 138)"/>
+  </g>
+</svg>
+            </div>
+          </div>
+          <p class="avatar-note" aria-hidden="true"><span class="fine">Move your cursor. I'm watching.</span><span class="touch">Drag a finger. I'm watching.</span></p>
         </div>
-        <div class="header-right">
-            <div class="phone">
-                <i class="fa fa-phone"></i>
-                <a href="tel:+919626441750">+91 9626441750</a> 
-            </div>
+      </div>
+
+      <div class="filmstrip" data-enter style="--i:2" aria-label="Frames from recent work">
+        <ul class="filmstrip-track" role="list">
+          <li class="filmstrip-item" style="--ar: 16/10"><img src="assets/img/ui_ux/dashboard_ux_design/1.jpg" alt="Log2Base2 learner dashboard"></li>
+          <li class="filmstrip-item" style="--ar: 3/2"><img src="assets/img/graphic-design/plato_logo/6.jpg" alt="Plato logo on an office reception wall"></li>
+          <li class="filmstrip-item" style="--ar: 16/9"><img src="assets/img/posters/monkey-ad-alt.jpg" alt="Mr. Kong, the 3D gorilla from the Log2Base2 ad"></li>
+          <li class="filmstrip-item" style="--ar: 5/4"><img src="assets/img/graphic-design/dwm_logo/2.jpg" alt="Dark Wolf Memes logo on yellow"></li>
+          <li class="filmstrip-item" style="--ar: 16/10"><img src="assets/img/car-ux/mockups/glass-dark.jpg" alt="Ultra-wide car display at night" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 16/9"><img src="assets/img/animation/olaichuvadi/13.jpg" alt="Glowing palm-leaf script from the Olaichuvadi 3D short" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 3/2"><img src="assets/img/graphic-design/colorful_thumbnails/1.jpg" alt="Course thumbnails for Log2Base2" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 1/1"><img src="assets/img/graphic-design/prem_monkey_handshake/1.jpg" alt="3D poster of a gorilla shaking hands with a person" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 4/3"><img src="assets/img/ui_ux/ux_mothertong/1.jpg" alt="Mothertong interface on a laptop" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 3/2"><img src="assets/img/graphic-design/thanini_logo/3.jpg" alt="Thanini logo embossed on paper" loading="lazy"></li>
+          <!-- duplicate set for a seamless loop -->
+          <li class="filmstrip-item" style="--ar: 16/10" aria-hidden="true"><img src="assets/img/ui_ux/dashboard_ux_design/1.jpg" alt="" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 3/2" aria-hidden="true"><img src="assets/img/graphic-design/plato_logo/6.jpg" alt="" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 16/9" aria-hidden="true"><img src="assets/img/posters/monkey-ad-alt.jpg" alt="" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 5/4" aria-hidden="true"><img src="assets/img/graphic-design/dwm_logo/2.jpg" alt="" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 16/10" aria-hidden="true"><img src="assets/img/car-ux/mockups/glass-dark.jpg" alt="" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 16/9" aria-hidden="true"><img src="assets/img/animation/olaichuvadi/13.jpg" alt="" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 3/2" aria-hidden="true"><img src="assets/img/graphic-design/colorful_thumbnails/1.jpg" alt="" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 1/1" aria-hidden="true"><img src="assets/img/graphic-design/prem_monkey_handshake/1.jpg" alt="" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 4/3" aria-hidden="true"><img src="assets/img/ui_ux/ux_mothertong/1.jpg" alt="" loading="lazy"></li>
+          <li class="filmstrip-item" style="--ar: 3/2" aria-hidden="true"><img src="assets/img/graphic-design/thanini_logo/3.jpg" alt="" loading="lazy"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="section" id="intro" aria-labelledby="intro-title">
+      <div class="wrap">
+        <h2 class="visually-hidden" id="intro-title">Introduction</h2>
+        <div class="intro-grid">
+          <p class="intro-statement">Most products need more than one kind of designer. A new screen needs icons, a launch needs a video, a new brand needs a website. I've spent eight years doing all three, often on the same project.</p>
+          <dl class="intro-facts">
+            <div><dt>Experience</dt><dd>8 years</dd></div>
+            <div><dt>Animation &amp; motion projects</dt><dd>250+</dd></div>
+            <div><dt>Based in</dt><dd>Chennai, India</dd></div>
+            <div><dt>Now</dt><dd>In-vehicle display UX</dd></div>
+          </dl>
+          <div class="intro-body prose">
+            <p>I spent six years at Log2Base2, a visual programming-education platform, starting in graphic design and animation and ending up on the leadership team. There I designed product screens, ran a small creative team and produced more than 250 explainers, logo animations and product videos.</p>
+            <p>Since then I've led UI/UX for a SaaS product at MindBridges, healthcare products at Encipher Health and, now, car display interfaces at BlueBinaries, while still designing the brands and videos that sit around them.</p>
+          </div>
         </div>
-    </div>
-    <div class="home-section" id="home">
-        <div class="home">
-            <div class="background-gradient">
-                <div class="circle circle1"></div>
-                <div class="circle circle2"></div>                
-            </div>
-            <div class="intro" data-index="0">
-                <div class="title" data-index="1">
-                    <p>Hello, I'm</p>
-                    <div class="name">
-                        <h1 class="f-name">Prabu</h1>
-                        <div class="dass">
-                            <div class="D"></div>
-                            <h1 class="l-name">ass</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="about" data-index="2">
-                    <div class="about-inside">
-                        <div class="about-inner">
-                            <h4>ABOUT ME</h4>
-                            <p>With <span class="bold">7+ years</span> of experience turning <span class="bold">ideas into visuals</span>, I specialize in <span class="bold">graphic design</span>, <span class="bold">animation</span>, <span class="bold">UI/UX</span>, and <span class="bold">creative storytelling</span>. From <span class="bold">startup sprints</span> to <span class="bold">Microsoft decks</span>, I’ve helped brands come alive through creativity.</p>
-                            <p>From co-founding a design-first brand to creating technical videos for <span class="bold">Microsoft</span>, my work blends strategy with creativity to develop designs that don’t just look good, work.</p>
-                            <p>Whether it’s a brand identity, a product animation, or a user experience that feels just right, I love bringing visuals to life that connect with people.</p>
-                            <p>I’m here to bring creative ideas to life.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="showreel">
-                <div class="video">
-                    <!--<div class="play-button"><span></span></div>-->
-                    <video loop id="video_player" controls poster="img/video-thumb.png">
-                        <source src="assets/showreel.mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <p>Click to see my showreel video</p>
-            </div>
+      </div>
+    </section>
+
+    <!-- Expertise overview -->
+    <section class="section section--tight" aria-labelledby="disciplines-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="disciplines-title">Three disciplines, one way of working</h2>
+          <p>Each has its own page with projects, process and the tools behind them.</p>
         </div>
-    </div>
-    <div class="experience-section" id="experience">
-        <canvas id="home-particles"></canvas>
-        <div class="outer-experience">
-            <div class="exp-title">
-                <h1>My career & experience</h1>
-            </div>
-            <div class="inner-experience">
-                <div class="experience-items">
-                    <div class="experience-item experience-item2" data-index="0">
-                        <div class="exp-years">
-                            <h1>2018 - 2024</h1>
-                            <h2>Co-founder | Senior Graphic Designer & Animator</h2>
-                            <h4 class="bold"><a href="https://www.log2base2.com" target="_blank">Log2base2</a> / <a href="https://www.mothertong.com" target="_blank">Mothertong</a></h4>
-                        </div>
-                        <div class="exp-achievements">
-                            <div class="exp-description">
-                                <p>Part of the leadership team working on <span class="bold">UX screens, product designs, and marketing videos.</span></p>
-                                <p><span class="bold">Managed a creative team</span> in delivering 2D/3D animations, branding, and video content for marketing campaigns.</p>
-                                <p>Produced over 250+ <span class="bold">animation and motion graphics projects</span> including explainers, logo animations, and product videos.</p>
-                                <p>Created engaging videos that led to a 35% increase in <span class="bold">video engagement and higher client retention.</span></p>
-                                <p>Contributed to <span class="bold">cross-functional campaigns with developers, marketers,</span> and project leads to ensure brand consistency.</p>
-                            </div>
-                        </div>
-                        <p class="award-line"><span class="bold">APPRECIATION&#128156;</span></p>
-                        <div class="awards">                               
-                            <div class="coin">
-                                <img src="assets/coin.svg" alt="coin icon" />
-                                <p><span class="highlight">Gold Coin Award Winner</span> : Awarded for conceptualizing and <span class="bold">animating the flagship 3D monkey character Ad for Log2Base2.</span></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="experience-item experience-item3" data-index="1">
-                        <div class="exp-years">
-                            <h1>2024 - 2025<span class="small">(Present)</span></h1>
-                            <h2>Microsoft | Plato (SaaS) | GJ Cloud Solutions</h2>
-                            <h4 class="bold"><a href="https://www.mindbridges.in" target="_blank">Mindbridges Technologies</a> / <a href="https://www.gjcloudsolutions.com" target="_blank">GJ Cloud Solutions</a></h4>
-                        </div>
-                        <div class="exp-achievements">
-                            <div class="exp-description">
-                                <p>Created UX screens and prototype for <span class="bold">SaaS products (Plato)</span></p>
-                                <p>Worked across <span class="bold">branding, multimedia design, and technical documentation</span> for global brands.</p>
-                                <p>Created technical documentation videos and newsletters for <span class="bold">Microsoft</span> projects.</p>
-                                <p>Led <span class="bold">branding and logo animation</span>, developed marketing videos, <span class="bold">and managed website design</span> for Plato.</p>
-                                <p>Contributed to brand growth through <span class="bold">branding strategy</span> and created <span class="bold">high-impact marketing videos</span> for GJ Cloud Solutions.</p>
-                            </div>
-                        </div>
-                        <p class="award-line"><span class="bold">APPRECIATION&#128156;</span></p>
-                        <div class="awards">
-                            <div class="award">
-                                <img src="assets/award.svg" alt="award icon" />
-                                <p><span class="highlight">Trailblazer Award</span> : Recognized for creating <span class="highlight">animation and pitch decks</span> on multiple company campaigns.</p>
-                            </div>
-                            <div class="award">
-                                <img src="assets/award2.svg" alt="award icon" />
-                                <p><span class="highlight">Key Contributor Award</span> : Honored for consistently delivering <span class="highlight">high-value creative assets that boosted campaign performance.</span></p>
-                            </div>
-                        </div>                                                 
-                    </div>
-                </div>   
-            </div>
+        <ul class="disciplines">
+          <li class="discipline">
+            <a href="ui-ux.html">
+              <h3>UI/UX Design</h3>
+              <p>Product screens, dashboards, design systems and prototypes for edtech, SaaS, healthcare and automotive.</p>
+              <span class="discipline-thumbs" aria-hidden="true">
+                <span><img src="assets/img/ui_ux/dashboard_ux_design/1.jpg" alt="" loading="lazy"></span>
+                <span><img src="assets/img/car-ux/mockups/blue-home.jpg" alt="" loading="lazy"></span>
+                <span><img src="assets/img/ui_ux/ux_mothertong/1.jpg" alt="" loading="lazy"></span>
+              </span>
+            </a>
+          </li>
+          <li class="discipline">
+            <a href="graphic-design.html">
+              <h3>Graphic Design</h3>
+              <p>Brand identities, logos, icon systems, marketing creatives and 3D posters.</p>
+              <span class="discipline-thumbs" aria-hidden="true">
+                <span><img src="assets/img/graphic-design/plato_logo/6.jpg" alt="" loading="lazy"></span>
+                <span><img src="assets/img/graphic-design/dwm_logo/2.jpg" alt="" loading="lazy"></span>
+                <span><img src="assets/img/graphic-design/thanini_logo/3.jpg" alt="" loading="lazy"></span>
+              </span>
+            </a>
+          </li>
+          <li class="discipline">
+            <a href="video-animation.html">
+              <h3>Video &amp; Animation</h3>
+              <p>Explainers, marketing films, logo animation and 3D character work, from storyboard to final sound mix.</p>
+              <span class="discipline-thumbs" aria-hidden="true">
+                <span><img src="assets/img/posters/monkey-ad-alt.jpg" alt="" loading="lazy"></span>
+                <span><img src="assets/img/animation/olaichuvadi/13.jpg" alt="" loading="lazy"></span>
+                <span><img src="assets/img/posters/refer-earn.jpg" alt="" loading="lazy"></span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Featured projects -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="work-title">Selected work</h2>
+          <p>Six projects that show the range: product UX, identity and animation.</p>
         </div>
-    </div>
-    <div class="whatiknow-section" id="whatiknow">
-        <div class="whatiknow-inner">
-            <div class="whatiknow-left">               
-                <img src="img/whatiknow-img.png" alt="What I Know">
-                <div>
-                    <h1>What I Know</h1>
-                </div>
-            </div>
-            <div class="whatiknow-right">
-                <div class="whatiknow-right-items">
-                    <div class="border">
-                        <div class="whatiknow-item">
-                            <h1>UI / UX DESIGN</h1>
-                            <p>I started designing as my hobby, but like all good hobbies, it slowly crept into my career — now it won't leave me alone!</p>
-                            <div class="arrow-down"></div>
-                            <ul class="exp-skills">
-                                <li>UX Design</li>
-                                <li>Wireframing</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Java Script</li>
-                                <li>Wordpress</li>
-                                <li>Sharepoint</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="border">
-                        <div class="whatiknow-item">
-                            <h1>GRAPHIC DESIGN</h1>
-                            <p>What began with posters in college turned into full-scale branding and design work across startups and global clients.</p>
-                            <div class="arrow-down"></div>
-                            <ul class="exp-skills">
-                                <li>Logo Design</li>
-                                <li>Branding</li>
-                                <li>Multimedia</li>
-                                <li>Print & Digital Assets</li>
-                                <li>Layout Design</li>
-                                <li>Ads</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="border">
-                        <div class="whatiknow-item">
-                            <h1>ANIMATION</h1>
-                            <p>It started with simple promo videos in college — now it’s a key part of how I tell stories and explain ideas. From 2D explainers to brand animations and motion ads, I bring visuals to life with purpose.</p>
-                            <div class="arrow-down"></div>
-                            <ul class="exp-skills">
-                                <li>Blender</li>
-                                <li>Motion Graphics</li>
-                                <li>2D Animation</li>
-                                <li>Logo Animation</li>
-                                <li>3D Animation</li>
-                                <li>Modeling</li>
-                                <li>Rigging</li>
-                                <li>Explainer Video</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="featured">
+          <a class="tile" href="ui-ux.html#in-vehicle">
+            <div class="frame ratio-16x10 zoom" data-reveal><img src="assets/img/car-ux/mockups/sand-home.jpg" alt="Car centre display showing a home screen with speed, navigation, media and climate" loading="lazy"></div>
+            <div class="tile-meta"><span class="tile-title">In-vehicle display UX</span><span class="tile-kind">UI/UX</span></div>
+            <p>Home, navigation, media, phone, apps and settings for a car's centre display, in three visual directions.</p>
+          </a>
+          <a class="tile" href="graphic-design.html#plato">
+            <div class="frame ratio-4x5 zoom" data-reveal><img src="assets/img/graphic-design/plato_logo/7.jpg" alt="Plato brand identity applied to stationery" loading="lazy"></div>
+            <div class="tile-meta"><span class="tile-title">Plato identity</span><span class="tile-kind">Branding</span></div>
+            <p>Logo system, guidelines and logo animation for a new SaaS product.</p>
+          </a>
+          <button class="tile video-trigger" type="button" data-video="assets/video/animation/monkey3d/monkeyad.mp4" data-poster="assets/img/posters/monkey-ad.jpg" data-title="Mr. Kong learns to code, 3D ad for Log2Base2">
+            <span class="frame ratio-4x3 zoom" data-reveal><img src="assets/img/posters/monkey-ad.jpg" alt="3D gorilla using a laptop in a jungle" loading="lazy"><span class="play" aria-hidden="true"><span class="play-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 4l15 8-15 8z"/></svg></span></span><span class="duration-badge">0:53</span></span>
+            <span class="tile-meta"><span class="tile-title">Mr. Kong learns to code</span><span class="tile-kind">3D animation</span></span>
+            <span class="tile-desc">My first Blender project: almost three months, one gorilla, and a Gold Coin Award.</span>
+          </button>
+          <a class="tile" href="ui-ux.html#learner-dashboard">
+            <div class="frame ratio-16x9 zoom" data-reveal><img src="assets/img/ui_ux/dashboard_ux_design/t2.jpg" alt="Log2Base2 learner dashboard on a laptop" loading="lazy"></div>
+            <div class="tile-meta"><span class="tile-title">Learner dashboard, Log2Base2</span><span class="tile-kind">UI/UX</span></div>
+            <p>One dashboard designed for three learner states: brand new, mid-course and returning.</p>
+          </a>
+          <a class="tile" href="ui-ux.html#mothertong">
+            <div class="frame ratio-3x2 zoom" data-reveal><img src="assets/img/ui_ux/ux_mothertong/1.jpg" alt="Mothertong app screens with the 3D mascot" loading="lazy"></div>
+            <div class="tile-meta"><span class="tile-title">Mothertong</span><span class="tile-kind">UX, identity, 3D</span></div>
+            <p>A language-learning sub-brand: identity, screens, a 3D character and the launch campaign, all by one designer.</p>
+          </a>
+          <a class="tile" href="video-animation.html#promotional">
+            <div class="frame ratio-1x1 zoom" data-reveal><img src="assets/img/2danimation/plato_trends/trend6.jpg" alt="Out of the box, a frame from a Plato marketing video" loading="lazy"></div>
+            <div class="tile-meta"><span class="tile-title">Plato marketing videos</span><span class="tile-kind">Motion</span></div>
+            <p>A series of short trend videos, illustrated, animated and sound-designed in-house.</p>
+          </a>
         </div>
-    </div>
-    <div class="skills-section" id="skills">
-        <div class="skills-inner">
-            <div class="skills-container">
-                <div class="skills-item skills-item-extra"></div>
-                <div class="skills-title skills-item">
-                    <h1>SKILLS</h1>
-                    <div class="arrow">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-                <div class="skills-item">
-                    <h1 class="numbercount">01</h1>
-                    <a class="ui" id="ui_ux" href="skills/ui_ux.html">
-                        <div class="img-wrapper">
-                            <img src="img/ui_ux.png" alt="ui/ux">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>UI/UX</h1>
-                        <h4>Wireframe, UI/UX Design</h4>
-                    </div>
-                </div>
-                <div class="skills-item">
-                    <h1 class="numbercount">02</h1>
-                    <a class="branding" id="branding" href="skills/branding.html">
-                        <div class="img-wrapper">
-                            <img src="img/branding.png" alt="branding">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>Branding</h1>
-                        <h4>Branding, Multimedia, Print & Marketing</h4>
-                    </div>
-                </div>
-                <div class="skills-item">
-                    <h1 class="numbercount">03</h1>
-                    <a class="graphic" id="graphic" href="skills/graphic-design.html">
-                        <div class="img-wrapper">
-                            <img src="img/graphic_design.png" alt="graphic-design">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>Graphic Design</h1>
-                        <h4>Branding, Multimedia, Print & Marketing</h4>
-                    </div>
-                </div>
-                <div class="skills-item">
-                    <h1 class="numbercount">04</h1>
-                    <a class="2danimation" id="2danimation" href="skills/2danimation.html">
-                        <div class="img-wrapper">
-                            <img src="img/2danimation.png" alt="2d animation">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>2D Animation</h1>
-                        <h4>Motion graphics & 2D Animation</h4>
-                    </div>
-                </div>
-                <div class="skills-item">
-                    <h1 class="numbercount">05</h1>
-                    <a class="3danimation" id="3danimation" href="skills/3danimation.html">
-                        <div class="img-wrapper">
-                            <img src="img/3danimation.png" alt="3d animation">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>3D Animation</h1>
-                        <h4>Modeling, 3D Animation</h4>
-                    </div>
-                </div>
-                <div class="skills-item skills-item-extra"></div>
-            </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section section--ruled" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="services-title">What you can bring me in for</h2>
+          <p>Hire me for one discipline or for the whole thing: product, brand and launch.</p>
         </div>
-    </div>
-    <div class="skills-section-mob" id="skills">
-        <div class="skills-title skills-item-mob">
-             <h1>SKILLS</h1>
+        <div class="services">
+          <article class="service">
+            <h3>UI/UX design</h3>
+            <p>Product design from the first user flow to developer handoff.</p>
+            <ul>
+              <li>UX strategy and user flows</li>
+              <li>Wireframes and interactive prototypes</li>
+              <li>Dashboards and SaaS interfaces</li>
+              <li>Design systems and component libraries</li>
+              <li>Responsive websites in WordPress and SharePoint</li>
+            </ul>
+            <a class="text-link" href="ui-ux.html">UI/UX projects</a>
+          </article>
+          <article class="service">
+            <h3>Graphic design</h3>
+            <p>Identities that hold together on every surface they land on.</p>
+            <ul>
+              <li>Logo and brand identity</li>
+              <li>Brand guidelines and asset libraries</li>
+              <li>Icon sets and illustration</li>
+              <li>Marketing and social creatives</li>
+              <li>Pitch decks and presentations</li>
+            </ul>
+            <a class="text-link" href="graphic-design.html">Graphic design projects</a>
+          </article>
+          <article class="service">
+            <h3>Video &amp; animation</h3>
+            <p>Motion that explains a product, sells it and gets remembered.</p>
+            <ul>
+              <li>Explainer and product videos</li>
+              <li>Motion graphics and logo animation</li>
+              <li>2D animation</li>
+              <li>3D modelling, animation and rendering</li>
+              <li>Editing, sound and social reels</li>
+            </ul>
+            <a class="text-link" href="video-animation.html">Video &amp; animation projects</a>
+          </article>
         </div>
-        <div class="skills-inner-mob">
-            <div class="skills-container-mob">
-                <div class="skills-item-mob">
-                    <h1 class="numbercount-mob">01</h1>
-                    <a class="ui" id="ui_ux" href="skills/ui_ux.html">
-                        <div class="img-wrapper-mob">
-                            <img src="img/ui_ux.png" alt="ui/ux">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay-mob" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>UI/UX</h1>
-                        <h4>Wireframe, UI/UX Design</h4>
-                    </div>
-                </div>
-                <div class="skills-item-mob">
-                    <h1 class="numbercount-mob">02</h1>
-                    <a class="branding" id="branding" href="skills/branding.html">
-                        <div class="img-wrapper-mob">
-                            <img src="img/branding.png" alt="branding">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay-mob" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>Branding</h1>
-                        <h4>Branding, Multimedia, Print & Marketing</h4>
-                    </div>
-                </div>
-                <div class="skills-item-mob">
-                    <h1 class="numbercount-mob">03</h1>
-                    <a class="graphic" id="graphic" href="skills/graphic-design.html">
-                        <div class="img-wrapper-mob">
-                            <img src="img/graphic_design.png" alt="graphic-design">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay-mob" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>Graphic Design</h1>
-                        <h4>Branding, Multimedia, Print & Marketing</h4>
-                    </div>
-                </div>
-                <div class="skills-item-mob">
-                    <h1 class="numbercount-mob">04</h1>
-                    <a class="2danimation" id="2danimation" href="skills/2danimation.html">
-                        <div class="img-wrapper-mob">
-                            <img src="img/2danimation.png" alt="2d animation">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay-mob" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>2D Animation</h1>
-                        <h4>Motion graphics & 2D Animation</h4>
-                    </div>
-                </div>
-                <div class="skills-item-mob">
-                    <h1 class="numbercount-mob">05</h1>
-                    <a class="3danimation" id="3danimation" href="skills/3danimation.html">
-                        <div class="img-wrapper-mob">
-                            <img src="img/3danimation.png" alt="3d animation">
-                            <img src="assets/link.svg" alt="link icon" class="link-overlay-mob" />
-                        </div>
-                    </a>
-                    <div class="column-inside">
-                        <h1>3D Animation</h1>
-                        <h4>Modeling, 3D Animation</h4>
-                    </div>
-                </div>
-            </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section--ruled" id="experience" aria-labelledby="experience-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="experience-title">Experience</h2>
+          <p>From a six-year run at an edtech startup to leading product design across healthcare and automotive.</p>
         </div>
-    </div>
-    <div class="contact-section" id="contact">
-        <div class="contact-inner">
+        <ol class="timeline" reversed>
+          <li class="role">
+            <div class="role-years">2026 to now</div>
             <div>
-                <h1>CONTACT</h1>
+              <h3>Lead Engineer, Software Development</h3>
+              <p class="role-org">BlueBinaries</p>
             </div>
-            <div class="contact-container">
-                <div class="contact-items">
-                    <img src="assets/linkedin.svg" alt="Linkedin">
-                    <a href="https://www.linkedin.com/in/prabu-dass/" target="_blank">in/prabu-dass</a>
-                </div>
-                <div class="contact-items">
-                    <img src="assets/email.svg" alt="Email">
-                    <a href="mailto:prabudass@proton.me">prabudass@proton.me</a>
-                </div>
-                <div class="contact-items">
-                    <img src="assets/phone.svg" alt="Phone">
-                    <a href="tel:+919626441750">+91 9626441750</a>
-                </div>
+            <ul>
+              <li>Designing UX for car display screens: layouts, user flows and visual design for in-vehicle interfaces.</li>
+              <li>Turning product requirements into clear, usable interface designs.</li>
+              <li>Restructuring and redesigning presentations and pitch decks.</li>
+            </ul>
+          </li>
+          <li class="role">
+            <div class="role-years">2025 to 2026</div>
+            <div>
+              <h3>UI/UX Lead</h3>
+              <p class="role-org">Encipher Health Inc.</p>
             </div>
+            <ul>
+              <li>Designed UX screens and interactive prototypes for healthcare products.</li>
+              <li>Created graphic assets within brand and product guidelines.</li>
+              <li>Produced animation and marketing videos for product communication.</li>
+            </ul>
+          </li>
+          <li class="role">
+            <div class="role-years">2024 to 2025</div>
+            <div>
+              <h3>UI/UX and Multimedia Designer</h3>
+              <p class="role-org">MindBridges</p>
+            </div>
+            <ul>
+              <li>Designed UX screens and prototypes for Plato, a SaaS product, and led its branding, logo animation, marketing videos and website.</li>
+              <li>Produced technical documentation videos and newsletters for Microsoft projects.</li>
+              <li>Delivered branding, multimedia and documentation work for global brands, including brand strategy and marketing videos for GJ Cloud Solutions.</li>
+            </ul>
+          </li>
+          <li class="role">
+            <div class="role-years">2018 to 2024</div>
+            <div>
+              <h3>Senior Graphic Designer and Animator</h3>
+              <p class="role-org">Log2Base2 and its language product, Mothertong</p>
+            </div>
+            <ul>
+              <li>Part of the leadership team, working on UX screens, product design and marketing videos.</li>
+              <li>Managed a creative team delivering 2D and 3D animation, branding and video for campaigns.</li>
+              <li>Produced 250+ animation and motion graphics projects: explainers, logo animations and product videos.</li>
+              <li>Created videos that increased video engagement by 35% and improved client retention.</li>
+            </ul>
+          </li>
+        </ol>
+
+        <h3 class="visually-hidden">Recognition</h3>
+        <ul class="recognition">
+          <li><strong>Gold Coin Award</strong><span>For conceptualising and animating Log2Base2's flagship 3D monkey character ad.</span></li>
+          <li><strong>Trailblazer Award</strong><span>For animation and pitch decks across multiple company campaigns.</span></li>
+          <li><strong>Key Contributor Award</strong><span>For consistently delivering high-value creative assets for campaigns.</span></li>
+          <li><strong>Certificate of Appreciation</strong><span>For delivering a fully working college website in three days.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills and tools -->
+    <section class="section section--ruled" aria-labelledby="tools-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="tools-title">Skills and tools</h2>
+          <p>The software changes. Knowing which one a project actually needs is the useful part.</p>
         </div>
+        <div class="toolset">
+          <div>
+            <h3>Product design</h3>
+            <ul>
+              <li><span>Figma</span><span>UI, prototyping, systems</span></li>
+              <li><span>Adobe XD</span><span>UI and prototyping</span></li>
+              <li><span>User research and flows</span><span>Discovery to IA</span></li>
+              <li><span>Wireframing</span><span>Low to high fidelity</span></li>
+              <li><span>HTML, CSS, JavaScript</span><span>Front-end builds</span></li>
+              <li><span>WordPress, SharePoint</span><span>Sites and intranets</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Graphic design</h3>
+            <ul>
+              <li><span>Illustrator</span><span>Logos, icons, vector art</span></li>
+              <li><span>Photoshop</span><span>Compositing, retouching</span></li>
+              <li><span>SVGator</span><span>Animated SVG</span></li>
+              <li><span>Brand systems</span><span>Guidelines and assets</span></li>
+              <li><span>Presentation design</span><span>Decks and pitches</span></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Motion and 3D</h3>
+            <ul>
+              <li><span>After Effects</span><span>Motion graphics, 2D</span></li>
+              <li><span>Premiere Pro</span><span>Editing</span></li>
+              <li><span>Audition</span><span>Sound design and mix</span></li>
+              <li><span>Blender</span><span>Modelling, rigging, rendering</span></li>
+              <li><span>Cinema 4D</span><span>3D character work</span></li>
+              <li><span>Autodesk Maya</span><span>3D animation</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section section--ruled" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <figure class="about-portrait">
+          <img class="about-avatar" src="assets/img/site/avatar-d.png" alt="Illustrated portrait of Prabu Dass in front of a purple D, the initial from his logo" loading="lazy" width="578" height="708">
+        </figure>
+        <div class="about-copy">
+          <h2 id="about-title">The designer who also animates the logo</h2>
+          <div class="prose">
+            <p>I'm Prabu Dass. I started with posters and promo videos in college, and never picked just one discipline.</p>
+            <p>At Log2Base2 the founder asked for a 2D ad. I pitched a 3D one instead, a gorilla who learns to code, and spent almost three months learning Blender properly to make it. It became the company's flagship ad. That's roughly how I work: say yes to the harder version, then do the homework.</p>
+            <p>These days most of my time goes into product UX, but the graphic and motion work keeps my interface design honest. I know what an icon has to survive at 16 pixels, and how long a transition can last before it gets in the way.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contact -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-inner">
+      <h2 class="contact-title" id="contact-title">Tell me what you're making.</h2>
+      <div class="contact-grid">
+        <p>Product, brand, launch film, or all three. I'm open to full-time roles, freelance projects and collaborations with creative teams.</p>
+        <ul class="contact-list">
+          <li><a href="mailto:prabudass@proton.me"><span>Email</span><span>prabudass@proton.me</span></a></li>
+          <li><a href="tel:+919626441750"><span>Phone</span><span>+91 96264 41750</span></a></li>
+          <li><a href="https://www.linkedin.com/in/prabu-dass/" target="_blank" rel="noopener"><span>LinkedIn</span><span>in/prabu-dass</span></a></li>
+        </ul>
+      </div>
+      <div class="btn-row">
+        <a class="btn" href="mailto:prabudass@proton.me?subject=Project%20enquiry">Email me about a project</a>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-    <script>
-        document.querySelectorAll('.header-center a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').slice(1);
-                const target = document.getElementById(targetId);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span data-year>2026</span> Prabu Dass. Designed and built by hand.</p>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ui-ux.html">UI/UX Design</a></li>
+          <li><a href="graphic-design.html">Graphic Design</a></li>
+          <li><a href="video-animation.html">Video &amp; Animation</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <dialog class="media-modal" aria-label="Video player">
+    <div class="media-modal-stage"></div>
+    <div class="media-modal-bar">
+      <p class="media-modal-title"></p>
+      <button class="media-modal-close" type="button">Close <span aria-hidden="true">✕</span></button>
+    </div>
+  </dialog>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/avatar.js" defer></script>
+
 </body>
 </html>

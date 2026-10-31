@@ -1,0 +1,54 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Capture video posters (dev tool)</title>
+<!--
+  Dev tool. Run the server with -AllowPosterUpload, open /tools/capture-posters.html.
+  Each video is seeked to `at` (fraction of duration), drawn to a canvas and saved as
+  assets/img/posters/<name>.jpg (max 1600px wide).
+-->
+<style>body{font:14px system-ui;padding:16px}li{margin:4px 0}</style>
+<h1>Capturing posters…</h1>
+<ol id="log"></ol>
+<script>
+const jobs = [
+  { name: "monkey-ad", src: "../assets/video/animation/monkey3d/monkeyad.mp4", at: 0.42 },
+  { name: "monkey-ad-alt", src: "../assets/video/animation/monkey3d/monkeyad.mp4", at: 0.7 },
+  { name: "olaichuvadi", src: "../assets/video/animation/olaichuvadi/olaichuvadi.mp4", at: 0.55 },
+  { name: "slate", src: "../assets/video/animation/slate_with_butterfly/video.mp4", at: 0.5 },
+  { name: "slate-making", src: "../assets/video/animation/slate_with_butterfly/making.mp4", at: 0.4 },
+  { name: "refer-earn", src: "../assets/video/2danimation/refer_earn/refer_earn.mp4", at: 0.35 },
+  { name: "reel-edit", src: "../assets/video/2danimation/dass_reel/insta_reel_edit.mp4", at: 0.3 },
+  { name: "reel-preview", src: "../assets/video/2danimation/dass_reel/preview.mp4", at: 0.3 },
+  { name: "mothertong-making", src: "../assets/video/ui_ux/ux_mothertong/video.mp4", at: 0.5 },
+  { name: "abacus-logo", src: "../assets/video/graphic-design/abacus_logo/video.mp4", at: 0.85 },
+  { name: "showreel-a", src: "../assets/video/site/showreel.mp4", at: 0.18 },
+  { name: "showreel-b", src: "../assets/video/site/showreel.mp4", at: 0.52 },
+  { name: "plato-trend-1", src: "../assets/video/2danimation/plato_trends/plato-trend-1.mp4", at: 0.5 },
+];
+const log = (t) => { const li = document.createElement("li"); li.textContent = t; document.getElementById("log").appendChild(li); };
+
+function grab(job) {
+  return new Promise((resolve) => {
+    const v = document.createElement("video");
+    v.muted = true; v.preload = "auto"; v.src = job.src;
+    v.addEventListener("loadedmetadata", () => { v.currentTime = Math.max(0.1, v.duration * job.at); }, { once: true });
+    v.addEventListener("seeked", async () => {
+      const scale = Math.min(1, 1600 / v.videoWidth);
+      const c = document.createElement("canvas");
+      c.width = Math.round(v.videoWidth * scale); c.height = Math.round(v.videoHeight * scale);
+      c.getContext("2d").drawImage(v, 0, 0, c.width, c.height);
+      const blob = await new Promise((r) => c.toBlob(r, "image/jpeg", 0.82));
+      const res = await fetch(`/__poster?name=${job.name}`, { method: "POST", body: blob });
+      log(`${job.name}: ${c.width}x${c.height} (${Math.round(v.duration)}s) → ${res.status}`);
+      resolve({ name: job.name, w: c.width, h: c.height, duration: v.duration });
+    }, { once: true });
+    v.addEventListener("error", () => { log(`${job.name}: ERROR`); resolve(null); }, { once: true });
+  });
+}
+(async () => {
+  const out = [];
+  for (const j of jobs) out.push(await grab(j));
+  window.__done = out;
+  document.querySelector("h1").textContent = "Done";
+})();
+</script>

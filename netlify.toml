@@ -1,0 +1,56 @@
+# Static site: no build step. Publish the repository root.
+[build]
+  publish = "."
+  command = ""
+
+# Old URLs from the previous portfolio -> new pages
+[[redirects]]
+  from = "/skills/ui_ux.html"
+  to = "/ui-ux.html"
+  status = 301
+[[redirects]]
+  from = "/skills/ui_ux/*"
+  to = "/ui-ux.html"
+  status = 301
+[[redirects]]
+  from = "/skills/branding.html"
+  to = "/graphic-design.html"
+  status = 301
+[[redirects]]
+  from = "/skills/graphic-design.html"
+  to = "/graphic-design.html"
+  status = 301
+[[redirects]]
+  from = "/skills/graphic-design/*"
+  to = "/graphic-design.html"
+  status = 301
+[[redirects]]
+  from = "/skills/2danimation.html"
+  to = "/video-animation.html"
+  status = 301
+[[redirects]]
+  from = "/skills/3danimation.html"
+  to = "/video-animation.html"
+  status = 301
+[[redirects]]
+  from = "/skills/2danimation/*"
+  to = "/video-animation.html"
+  status = 301
+[[redirects]]
+  from = "/skills/animation/*"
+  to = "/video-animation.html"
+  status = 301
+[[redirects]]
+  from = "/resume.html"
+  to = "/#experience"
+  status = 301
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
