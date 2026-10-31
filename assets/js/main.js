@@ -248,7 +248,7 @@
     ".featured .frame", ".project-index .frame", ".video-grid .frame", ".reel-row .frame",
     ".switcher-stage .frame", ".poster-row .frame", ".campaign .frame", ".ed-media .frame",
     ".gd-hero .frame", ".stills .frame", ".case-gallery .frame", ".page-hero-media .frame",
-    ".reel-feature .frame", ".about-portrait .frame", ".story-media .frame", ".promo-feature .frame",
+    ".reel-feature .frame", ".about-portrait .frame", ".story-media .frame", ".promo-feature .frame", ".bento .work-card", ".disc-grid .disc-card",
   ].join(",");
   if (motionOK() && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
     document.querySelectorAll(tiltSelector).forEach((el) => {
